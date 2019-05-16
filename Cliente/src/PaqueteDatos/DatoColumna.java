@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author kejor
+ * @author Fallas
  */
 public class DatoColumna {
     List Esquema=null;
