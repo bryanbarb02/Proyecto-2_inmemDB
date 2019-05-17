@@ -1,7 +1,7 @@
 package Servidor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import PaqueteDatos.ClassReference;
+import PaqueteDatos.ClaseReferencia;
 //import dataPackages.DataPack;
 //import dataPackages.DotConnectionPack;
 //mport dataPackages.ToFigurePack;
@@ -29,23 +29,23 @@ import java.util.List;
  */
 public class ServerController implements Runnable{
     
-   // private static Grid grid;
-    final ObjectMapper objectMapper = new ObjectMapper();
-   // private static Queue playerQueue;
+   // Cuadrícula de rejilla estática privada;
+    final ObjectMapper mapearObjetos = new ObjectMapper();
+   // cola estática privada playerQueue;
     private ClienteIP cliente;
-   // private static int turnNumber;
-   // private static int maxTurnNumber;
+    // private static int turnNumber;
+    // int estático privado maxTurnNumber;
     private DatoColumna Columna;
     public List DatosAlmacenados;
     /**
-     * Main method for serverController. Initializes all attributes and starts thread 
-     * to listen for connections.
+     * Método principal para serverController. Inicializa todos los atributos y comienza el hilo.
+     * Para escuchar conexiones.
      * @param args
      * @throws Exception
      */
     public static void main (String[] args) throws Exception{
-        Thread recievePackages = new Thread(new ServerController());
-        recievePackages.start();
+        Thread recibirPaquetes = new Thread(new ServerController());
+        recibirPaquetes.start();
       //  grid = new Grid(5, 5);
         //playerQueue = new Queue();
        // turnNumber = 1;
@@ -90,7 +90,7 @@ public class ServerController implements Runnable{
             sendDataPacks(getWinnerName());
         }
     }
-    
+    */
     
     public void almacenarDatos(List Datos){
         this.DatosAlmacenados = Datos;  
@@ -131,8 +131,8 @@ public class ServerController implements Runnable{
     */
     public void enviaListaColumnas(List Esquema){
         DatoColumna Columnas = new DatoColumna(Esquema);
-        ClassReference classReference = new ClassReference("DatoColumna");
-        serverSend(Columnas, classReference, cliente.getclienteIp());
+        ClaseReferencia claseReferencia = new ClaseReferencia("DatoColumna");
+        servidorEnviar(Columnas, claseReferencia, cliente.getclienteIp());
     
     /**
      * Sends a DotConnectionPack to the IP received as a parameter.
@@ -213,10 +213,10 @@ public class ServerController implements Runnable{
      * Gets the data needed to send RegisterPacks to both players.
      */
     public void enviarRegistroCliente(){
-        ClassReference classReference = new ClassReference("RegistroCliente");
+        ClaseReferencia claseRederencia = new ClaseReferencia("RegistroCliente");
         String clienteIp = cliente.getclienteIp();
         RegistroCliente registrocliente = new RegistroCliente(clienteIp);
-        serverSend(registrocliente, classReference, clienteIp);
+        servidorEnviar(registrocliente, claseRederencia, clienteIp);
         
     }
     
@@ -251,20 +251,20 @@ public class ServerController implements Runnable{
      * @param object2 Identifier of the class sent.
      * @param ipAddress IP address of the client.
      */
-    public void serverSend(Object object1, Object object2, String ipAddress){
+    public void servidorEnviar(Object objeto1, Object objeto2, String DireccionIP){
   
         try {
-            Socket serverSocket = new Socket(ipAddress, 9099);
+            Socket serverSocket = new Socket(DireccionIP, 9099);
             
-            String sendObject1 = JSONUtil.convertJavaToJson(object1);
-            String sendObject2 = JSONUtil.convertJavaToJson(object2);                       
+            String enviarObjeto1 = JSONUtil.convertJavaToJson(objeto1);
+            String enviarObjeto2 = JSONUtil.convertJavaToJson(objeto2);                       
             
             PrintWriter out = new PrintWriter(serverSocket.getOutputStream(), true);
             
-            out.println(sendObject1);
-            out.println(sendObject2);
+            out.println(enviarObjeto1);
+            out.println(enviarObjeto2);
             
-            System.out.println("Message was sent from the server");
+            System.out.println("Mensaje enviado desde el servidor.");
            
             out.close();
             serverSocket.close();
@@ -274,7 +274,7 @@ public class ServerController implements Runnable{
     }
     
     /**
-     * This method listens to incoming messages from the clients.
+     * Este método escucha los mensajes entrantes de los clientes.
      */
     @Override
     public void run() {
@@ -282,30 +282,30 @@ public class ServerController implements Runnable{
             int portNumber = 9090;
             ServerSocket server = new ServerSocket(portNumber);
             
-            System.out.println("Server waiting for a connection on port: " + portNumber);
+            System.out.println("Servidor en espera de una conexión en el puerto:" + portNumber);
             
             while (true){
                 Socket fromServerSocket = server.accept();
                 
                 BufferedReader in = new BufferedReader(new InputStreamReader(fromServerSocket.getInputStream()));
                 
-                String recievedObjectAsString = in.readLine();
-                String recievedClassReferenceAsString = in.readLine();
+                String objetoRecibidoComoString = in.readLine();
+                String referenciaRecibidaComoString = in.readLine();
                 
                 in.close();
                 fromServerSocket.close();
                 
-                while (recievedObjectAsString != null && recievedClassReferenceAsString != null){
-                    ClassReference reference = JSONUtil.convertJsonToJava(recievedClassReferenceAsString, ClassReference.class);
-                    if (reference.getReference().equals("DatoColumna")){
+                while (objetoRecibidoComoString != null && referenciaRecibidaComoString != null){
+                    ClaseReferencia referencia = JSONUtil.convertJsonToJava(referenciaRecibidaComoString, ClaseReferencia.class);
+                    if (referencia.getReferencia().equals("DatoColumna")){
                         System.out.println("llego Dato Columna");
-                        DatoColumna recibeDatoColumna = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);                        
+                        DatoColumna recibeDatoColumna = JSONUtil.convertJsonToJava(objetoRecibidoComoString, DatoColumna.class);                        
                         almacenarDatos((List) recibeDatoColumna);
                         break;
                     }
-                    if(reference.getReference().equals("RegidtroCliente")){
+                    if(referencia.getReferencia().equals("RegidtroCliente")){
                         System.out.println("Llego para registrar cliente");
-                        RegistroCliente receivedRegisterPack = JSONUtil.convertJsonToJava(recievedObjectAsString, RegistroCliente.class);                        
+                        RegistroCliente receivedRegisterPack = JSONUtil.convertJsonToJava(objetoRecibidoComoString, RegistroCliente.class);                        
                         registroCliente(receivedRegisterPack);
                         break;
                     }
