@@ -1,25 +1,24 @@
-
 package PaqueteDatos;
 
 import java.io.Serializable;
 
 /**
- * Class used to register a new player.
+ * Clase utilizada para registrar un nuevo jugador.
  */
 public class RegistroCliente implements Serializable{
     
     /**
-      * Ip adress of the player.
+      * Dirección IP del jugador.
       */
     private String clienteIp;
         
     /**
-     * Default constructor of the class RegisterPack.
+     * Constructor por defecto de la clase RegistroCliente.
      */
     public RegistroCliente(){}
     
     /**
-     * Constructor of the class RegisterPack.
+     * Constructor de la clase RegisterPack
      * @param playerIp {@link RegisterPack#playerIp}
  
      */
@@ -27,7 +26,6 @@ public class RegistroCliente implements Serializable{
         this.clienteIp = clienteIp;
 
     }
-
    
     /**
      * Returns the variable playerIp.
@@ -39,7 +37,7 @@ public class RegistroCliente implements Serializable{
 
     /**
      * Sets the variable playerIp.
-     * @param playerIp {@link RegistroCliente#playerIp}
+     * @param clienteIp {@link RegistroCliente#playerIp}
      */
     public void setClienteIp(String clienteIp) {
         this.clienteIp = clienteIp;
