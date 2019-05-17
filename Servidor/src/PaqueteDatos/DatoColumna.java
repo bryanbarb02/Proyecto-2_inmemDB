@@ -12,9 +12,14 @@ import java.util.List;
  */
 public class DatoColumna {
     List Esquema=null;
-    public void ObtenerLista (List esquema){
-        System.out.println(esquema);
-        Esquema = esquema;
+    
+    public DatoColumna(List Esquema){
+     this.Esquema = Esquema;
+    }
+    
+    public void ObtenerLista (List Esquema){
+        System.out.println(Esquema);
+        Esquema = Esquema;
         System.out.print(Esquema);
     }
 

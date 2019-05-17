@@ -2,14 +2,14 @@ package Servidor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import PaqueteDatos.ClassReference;
-import dataPackages.DataPack;
-import dataPackages.DotConnectionPack;
-import dataPackages.ToFigurePack;
-import gameLogic.LinkedList;
-import gameLogic.Grid;
-import gameLogic.LinkedListNode;
-import gameLogic.Player;
-import gameLogic.Queue;
+//import dataPackages.DataPack;
+//import dataPackages.DotConnectionPack;
+//mport dataPackages.ToFigurePack;
+//import gameLogic.LinkedList;
+//import gameLogic.Grid;
+//import gameLogic.LinkedListNode;
+import Logica.ClienteIP;
+//import gameLogic.Queue;
 import jsonLogic.JSONUtil;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,7 +20,8 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import PaqueteDatos.DatoColumna;
-import PaqueteDatos.RegisterPack;
+import PaqueteDatos.RegistroCliente;
+import java.util.List;
 
 /**
  *
@@ -28,14 +29,13 @@ import PaqueteDatos.RegisterPack;
  */
 public class ServerController implements Runnable{
     
-    private static Grid grid;
+   // private static Grid grid;
     final ObjectMapper objectMapper = new ObjectMapper();
-    private static Queue playerQueue;
-    private Player player1;
-    private Player player2;
-    private static int turnNumber;
-    private static int maxTurnNumber;
-    
+   // private static Queue playerQueue;
+    private ClienteIP cliente;
+   // private static int turnNumber;
+   // private static int maxTurnNumber;
+    private DatoColumna Columna;
     /**
      * Main method for serverController. Initializes all attributes and starts thread 
      * to listen for connections.
@@ -45,10 +45,10 @@ public class ServerController implements Runnable{
     public static void main (String[] args) throws Exception{
         Thread recievePackages = new Thread(new ServerController());
         recievePackages.start();
-        grid = new Grid(5, 5);
-        playerQueue = new Queue();
-        turnNumber = 1;
-        maxTurnNumber = 16;
+      //  grid = new Grid(5, 5);
+        //playerQueue = new Queue();
+       // turnNumber = 1;
+        //maxTurnNumber = 16;
     }
     
     /**
@@ -60,13 +60,14 @@ public class ServerController implements Runnable{
      * @param connection
      * @throws Exception
      */
+    /*
     public void createConnection(DotConnectionPack connection) throws Exception{
         int initalDotPosition = connection.getInitialDot();
         int finalDotPosition = connection.getFinalDot();
         if(initalDotPosition != 0 && finalDotPosition != 0){
             LinkedList figureList = grid.createConnection(initalDotPosition, finalDotPosition);
             String strFigure = figureToString(figureList);
-            Player player = null;
+            ClienteIP player = null;
 
             if(connection.getPlayerNumber() == 1){
                 player = player1;
@@ -94,7 +95,7 @@ public class ServerController implements Runnable{
      * @param figure
      * @return
      */
-    public String figureToString(LinkedList figure){
+    /*public String figureToString(LinkedList figure){
         String strFigure = "";
         if(figure != null){
             for(LinkedListNode node = figure.getFirstNode(); node != null; 
@@ -102,28 +103,39 @@ public class ServerController implements Runnable{
                 strFigure += node.getPosition() + ".";
             }
         }return strFigure;
-    }
+    }*/
     
     /**
      * If a new figure was created, send a ToFigurePack to both players.
      * @param strFigure
      * @param playerNumber
      */
+    /*
     public void sendToFigurePack(String strFigure, int playerNumber){
         ToFigurePack figurePack = new ToFigurePack(strFigure, playerNumber);
         ClassReference classReference = new ClassReference("ToFigurePack");
         serverSend(figurePack, classReference, player1.getPlayerIp());
         serverSend(figurePack, classReference, player2.getPlayerIp());
     }
+    */
+    public void enviaListaColumnas(List Esquema){
+        DatoColumna Columnas = new DatoColumna(Esquema);
+        ClassReference classReference = new ClassReference("DatoColumna");
+        serverSend(Columnas, classReference, cliente.getclienteIp());
     
     /**
      * Sends a DotConnectionPack to the IP received as a parameter.
      * @param dotConnectionPack
      * @param ip
      */
-    public void sendDotConnectionPack(DotConnectionPack dotConnectionPack, String ip){
-        ClassReference classReference = new ClassReference("DotConnectionPack");
-        serverSend(dotConnectionPack, classReference, ip);
+    
+    
+    }
+    
+    public void registroCliente(RegistroCliente registrocliente){
+        String clienteIp = registrocliente.getClienteIp();
+            ClienteIP cliente = new ClienteIP(clienteIp);
+   
     }
     
     /**
@@ -131,6 +143,7 @@ public class ServerController implements Runnable{
      * Sends the name of the winner if the maxTurnNumber is reached.
      * @param winnerName
      */
+    /*/
     public void sendDataPacks(String winnerName){
         ClassReference classReference = new ClassReference("DataPack");
         int score1 = player1.getScore();
@@ -154,13 +167,14 @@ public class ServerController implements Runnable{
      * to start a new match.
      * @param registerPack
      */
-    public void registerNewPlayer(RegisterPack registerPack){
+    /*
+    public void registerNewPlayer(RegistroCliente registerPack){
         String playerName = registerPack.getPlayerName();
         String playerIp = registerPack.getPlayerIp();
         if(!playerQueue.contains(playerIp)){
             int playerNumber = registerPack.getPlayerNumber();
 
-            Player player = new Player(playerName, playerIp, playerNumber);
+            ClienteIP player = new ClienteIP(playerName, playerIp, playerNumber);
             playerQueue.enqueue(player);
 
             if(playerQueue.getSize() == 2 && player1 == null && player2 == null){
@@ -168,11 +182,14 @@ public class ServerController implements Runnable{
             }
         }
     }
+    */
+    
     
     /**
      * Dequeues the first two players in the Queue, sends registerPacks to both of them
      * and this starts a new match.
      */
+    /*
     public void startNewMatch(){
         player1 = playerQueue.dequeue().getPlayer();
         player1.setPlayerNumber(1);
@@ -184,26 +201,19 @@ public class ServerController implements Runnable{
     /**
      * Gets the data needed to send RegisterPacks to both players.
      */
-    public void sendRegisterPack(){
-        ClassReference classReference = new ClassReference("RegisterPack");
+    public void enviarRegistroCliente(){
+        ClassReference classReference = new ClassReference("RegistroCliente");
+        String clienteIp = cliente.getclienteIp();
+        RegistroCliente registrocliente = new RegistroCliente(clienteIp);
+        serverSend(registrocliente, classReference, clienteIp);
         
-        String player1Name = player1.getNickname();
-        String player2Name = player2.getNickname();
-        String player1Ip = player1.getPlayerIp();
-        RegisterPack registerPackPlayer1 = new RegisterPack(player1Ip, player1Name, 1);
-        registerPackPlayer1.setOtherPlayerName(player2Name);
-        serverSend(registerPackPlayer1, classReference, player1Ip);
-        
-        String player2Ip = player2.getPlayerIp();
-        RegisterPack registerPackPlayer2 = new RegisterPack(player2Ip, player2Name, 2);
-        registerPackPlayer2.setOtherPlayerName(player1Name);
-        serverSend(registerPackPlayer2, classReference, player2Ip);
     }
     
     /**
      * 
      * @return
      */
+    /*
     public String getWinnerName(){
         String winner = null;
         if(turnNumber == maxTurnNumber){
@@ -279,22 +289,22 @@ public class ServerController implements Runnable{
                     if (reference.getReference().equals("DatoColumna")){
                         System.out.println("llego Dato Columna");
                         DatoColumna recibeDatoColumna = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);                        
-                        createConnection(recibeDatoColumna);
+                        almacenarDatos(recibeDatoColumna);
                         break;
                     }
-                    if(reference.getReference().equals("RegisterPack")){
-                        System.out.println("Register pack arrived");
-                        RegisterPack receivedRegisterPack = JSONUtil.convertJsonToJava(recievedObjectAsString, RegisterPack.class);                        
-                        registerNewPlayer(receivedRegisterPack);
+                    if(reference.getReference().equals("RegidtroCliente")){
+                        System.out.println("Llego para registrar cliente");
+                        RegistroCliente receivedRegisterPack = JSONUtil.convertJsonToJava(recievedObjectAsString, RegistroCliente.class);                        
+                        registroCliente(receivedRegisterPack);
                         break;
                     }
-                    
+                    /*
                     if(reference.getReference().equals("DataPack")){
                         System.out.println("Data pack arrived");
                         DataPack receivedDataPack = JSONUtil.convertJsonToJava(recievedObjectAsString, DataPack.class);                        
                         playerDisconnected(receivedDataPack);
                         break;
-                    }
+                    }*/
                 }  
             }
         } catch (Exception ex) {
