@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package cliente;
 
+package cliente;
+import PaqueteDatos.GetIP;
 /**
  *
- * @author kejor
+ * @author Kevin Rodríguez
+ * Este es un jFrame que que pide el IP y luego avanza.
  */
 public class Ingreso extends javax.swing.JFrame {
 
@@ -115,19 +112,26 @@ public class Ingreso extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     *Botón siguiente que obtiene el IP del TextPlane y sigue a la próxima ventana.
+     * @param evt 
+     */
     private void SiguenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguenteActionPerformed
         new Arbol_menu().setVisible(true);
         String Ip=null;
         Ip=(IpText.getText());
         System.out.println(Ip);
+        enviarIP(Ip);
         dispose();
     }//GEN-LAST:event_SiguenteActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         System.exit(0);//para salir de la pantalla
     }//GEN-LAST:event_SalirActionPerformed
-
+    public void enviarIP(String IP){
+        GetIP getip = new GetIP();
+        getip.GetIP(IP);
+    }
     /**
      * @param args the command line arguments
      */

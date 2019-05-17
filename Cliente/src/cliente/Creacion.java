@@ -10,7 +10,9 @@ import java.util.List;
 
 /**
  *
- * @author kejor
+ * @author Kevin Rodríguez
+ * Es el jFrame donde se crea el esquema y su fila con el nombre
+ * de las columnas.
  */
 public class Creacion extends javax.swing.JFrame {
    
@@ -188,6 +190,10 @@ public class Creacion extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_AddEsquemaActionPerformed
     List columna = new ArrayList();
+    /**
+     * Aquí
+     * @param Colum tipo List
+     */
     public void Creacion (String Colum){
         columna.add(Colum);
     }

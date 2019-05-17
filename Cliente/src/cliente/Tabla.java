@@ -1,14 +1,14 @@
 package cliente;
-/**
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-// Packages to import 
+
 import javax.swing.JFrame; 
 import javax.swing.JScrollPane; 
 import javax.swing.JTable; 
-  
+/**
+ * @author Kevin Rodríguez
+ * @version 3.0
+ * @param Strings
+ * Esta clase crea las tablas-esquemas.
+ */
 public class Tabla { 
     // frame 
     JFrame f; 

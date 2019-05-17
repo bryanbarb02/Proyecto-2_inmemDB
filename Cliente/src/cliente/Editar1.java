@@ -7,7 +7,8 @@ package cliente;
 import PaqueteDatos.DatoFila;
 /**
  *
- * @author kejor
+ * @author Kevin Rodríguez
+ * Este jFrame es donde se le aagrega información a las columnas.
  */
 import java.util.ArrayList;
 import java.util.List;
@@ -129,9 +130,16 @@ public class Editar1 extends javax.swing.JFrame {
         new AddMenu().setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed
     List Fila = new ArrayList();
+    /**
+     * Agregar nuevo dato de columna.
+     * @param Fil tipo List
+     */
     public void Creacion (String Fil){
         Fila.add(Fil);
     }
+    /**
+     * Crea la columna y manda a la clase DatoFila 
+     */
     public void CrearColumna() {
       System.out.println(Fila);
       DatoFila enviarlista = new DatoFila();
