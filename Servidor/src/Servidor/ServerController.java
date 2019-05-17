@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import PaqueteDatos.ClassReference;
 import dataPackages.DataPack;
 import dataPackages.DotConnectionPack;
-import PaqueteDatos.RegisterPack;
 import dataPackages.ToFigurePack;
 import gameLogic.LinkedList;
 import gameLogic.Grid;
@@ -20,10 +19,12 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import PaqueteDatos.DatoColumna;
+import PaqueteDatos.RegisterPack;
 
 /**
  *
- * @author Erick Barrantes
+ * @author Fabian Fallas
  */
 public class ServerController implements Runnable{
     
