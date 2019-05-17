@@ -36,6 +36,7 @@ public class ServerController implements Runnable{
    // private static int turnNumber;
    // private static int maxTurnNumber;
     private DatoColumna Columna;
+    public List DatosAlmacenados;
     /**
      * Main method for serverController. Initializes all attributes and starts thread 
      * to listen for connections.
@@ -89,6 +90,16 @@ public class ServerController implements Runnable{
             sendDataPacks(getWinnerName());
         }
     }
+    
+    
+    public void almacenarDatos(List Datos){
+        this.DatosAlmacenados = Datos;  
+    }
+    public List getAlmacenarDatos(){
+        return DatosAlmacenados;
+    }
+    
+    
     
     /**
      * Receives a LinkedList representing a figure and it converts it to a String
@@ -289,7 +300,7 @@ public class ServerController implements Runnable{
                     if (reference.getReference().equals("DatoColumna")){
                         System.out.println("llego Dato Columna");
                         DatoColumna recibeDatoColumna = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);                        
-                        almacenarDatos(recibeDatoColumna);
+                        almacenarDatos((List) recibeDatoColumna);
                         break;
                     }
                     if(reference.getReference().equals("RegidtroCliente")){
