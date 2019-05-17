@@ -18,29 +18,36 @@ public class Tabla {
     // Constructor 
     Tabla() 
     { 
+        
         // Frame initiallization 
         f = new JFrame(); 
   
-        // Frame Title 
-        f.setTitle("JTable Example"); 
+        // Frame Title
+        String Name="Barcelona";
+        String[] NombreColumnas = { "Jugador", "Salario", "Numero","Estatus" };
+        String [] [] Datos= { 
+            { "Messe", "TU", "10","activo" }, 
+            { "Suares", "PINCHE", "9","Activo" },
+            { "Umtiti", "MADRE", "23","Activo"},
+            {"Dembele", "WEY", "11","Lesionado"},
+             
+        }; 
+        f.setTitle(""+Name); 
   
         // Data to be displayed in the JTable 
-        String[][] data = { 
-            { "Kundan Kumar Jha", "4031", "CSE" }, 
-            { "Anand Jha", "6014", "IT" } 
-        }; 
+        String[][] data = Datos; 
          // Column Names 
-        String[] columnNames = { "Name", "Roll Number", "Department" }; 
+        String[] columnNames = NombreColumnas; 
   
         // Initializing the JTable 
         j = new JTable(data, columnNames); 
-        j.setBounds(30, 40, 200, 300); 
+        j.setBounds(100, 150, 200, 300); 
   
         // adding it to JScrollPane 
         JScrollPane sp = new JScrollPane(j); 
         f.add(sp); 
         // Frame Size 
-        f.setSize(500, 200); 
+        f.setSize(1000,1000); 
         // Frame Visible = true 
         f.setVisible(true); 
     } 
