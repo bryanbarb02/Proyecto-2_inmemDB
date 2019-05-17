@@ -33,160 +33,160 @@ public class Creacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        PanelCrearEsquema = new javax.swing.JPanel();
+        Titulo = new javax.swing.JLabel();
+        Salir = new javax.swing.JButton();
+        LabelNomEsquema = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        NombreEsquemaText = new javax.swing.JTextPane();
+        Add1 = new javax.swing.JButton();
+        LabelNomColumna = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        NombreColumnaText = new javax.swing.JTextPane();
+        Add2 = new javax.swing.JButton();
+        AddEsquema = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Crear Esquema");
+        Titulo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Titulo.setText("Crear Esquema");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setBackground(new java.awt.Color(255, 255, 255));
+        Salir.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Salir.setForeground(new java.awt.Color(0, 0, 0));
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Nombre del esquema :");
+        LabelNomEsquema.setText("Nombre del esquema :");
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(NombreEsquemaText);
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Add");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Add1.setBackground(new java.awt.Color(255, 255, 255));
+        Add1.setForeground(new java.awt.Color(0, 0, 0));
+        Add1.setText("Add");
+        Add1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                Add1ActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Nombre de columna :");
+        LabelNomColumna.setText("Nombre de columna :");
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(NombreColumnaText);
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Add");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Add2.setBackground(new java.awt.Color(255, 255, 255));
+        Add2.setForeground(new java.awt.Color(0, 0, 0));
+        Add2.setText("Add");
+        Add2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                Add2ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Add Esquema");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        AddEsquema.setBackground(new java.awt.Color(255, 255, 255));
+        AddEsquema.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        AddEsquema.setForeground(new java.awt.Color(0, 0, 0));
+        AddEsquema.setText("Add Esquema");
+        AddEsquema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AddEsquemaActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelCrearEsquemaLayout = new javax.swing.GroupLayout(PanelCrearEsquema);
+        PanelCrearEsquema.setLayout(PanelCrearEsquemaLayout);
+        PanelCrearEsquemaLayout.setHorizontalGroup(
+            PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCrearEsquemaLayout.createSequentialGroup()
+                .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCrearEsquemaLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1)
+                        .addComponent(Titulo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Salir))
+                    .addGroup(PanelCrearEsquemaLayout.createSequentialGroup()
                         .addGap(70, 70, 70)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                        .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCrearEsquemaLayout.createSequentialGroup()
+                                .addComponent(LabelNomEsquema)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(PanelCrearEsquemaLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabel3)
+                                .addComponent(LabelNomColumna)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Add1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Add2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCrearEsquemaLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(AddEsquema)
                 .addGap(297, 297, 297))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PanelCrearEsquemaLayout.setVerticalGroup(
+            PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCrearEsquemaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jButton1))
+                .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelCrearEsquemaLayout.createSequentialGroup()
+                        .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Titulo)
+                            .addComponent(Salir))
                         .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane1)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton2))
+                                .addComponent(LabelNomEsquema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Add1))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                        .addGroup(PanelCrearEsquemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelNomColumna)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton4))
+                    .addComponent(Add2))
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(AddEsquema)
                 .addContainerGap(207, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(PanelCrearEsquema, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         System.exit(0);//para salir de la pantalla
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SalirActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Add1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add1ActionPerformed
         String Name=null;
-        Name=(jTextPane1.getText());
+        Name=(NombreEsquemaText.getText());
         Creacion (Name);
         System.out.println(Name);
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_Add1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void Add2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add2ActionPerformed
         String Columna=null;
-        Columna=(jTextPane2.getText());
+        Columna=(NombreColumnaText.getText());
         System.out.println(Columna);
         Creacion (Columna);
-        jTextPane2.setText("");
-    }//GEN-LAST:event_jButton4ActionPerformed
+        NombreColumnaText.setText("");
+    }//GEN-LAST:event_Add2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void AddEsquemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddEsquemaActionPerformed
         CrearColumna ();
-        jTextPane1.setText("");
+        NombreEsquemaText.setText("");
         new AddMenu().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_AddEsquemaActionPerformed
     List columna = new ArrayList();
     public void Creacion (String Colum){
         columna.add(Colum);
@@ -234,18 +234,18 @@ public class Creacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton Add1;
+    private javax.swing.JButton Add2;
+    private javax.swing.JButton AddEsquema;
+    private javax.swing.JLabel LabelNomColumna;
+    private javax.swing.JLabel LabelNomEsquema;
+    private javax.swing.JTextPane NombreColumnaText;
+    private javax.swing.JTextPane NombreEsquemaText;
+    private javax.swing.JPanel PanelCrearEsquema;
+    private javax.swing.JButton Salir;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
     // End of variables declaration//GEN-END:variables
 
    

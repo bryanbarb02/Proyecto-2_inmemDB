@@ -28,123 +28,121 @@ public class Menu_Esquemas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        MenuEsquemasPanel = new javax.swing.JPanel();
+        LabelMenuEsquemas = new javax.swing.JLabel();
+        Crear = new javax.swing.JButton();
+        Insertar = new javax.swing.JButton();
+        Borrar = new javax.swing.JButton();
+        Buscar = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        LabelMenuEsquemas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        LabelMenuEsquemas.setText("Menú Esquemas");
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setText("Menú Esquemas");
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Crear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Crear.setBackground(new java.awt.Color(255, 255, 255));
+        Crear.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Crear.setForeground(new java.awt.Color(0, 0, 0));
+        Crear.setText("Crear");
+        Crear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CrearActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Insertar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Insertar.setBackground(new java.awt.Color(255, 255, 255));
+        Insertar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Insertar.setForeground(new java.awt.Color(0, 0, 0));
+        Insertar.setText("Insertar");
+        Insertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                InsertarActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Borrar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Borrar.setBackground(new java.awt.Color(255, 255, 255));
+        Borrar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Borrar.setForeground(new java.awt.Color(0, 0, 0));
+        Borrar.setText("Borrar");
+        Borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                BorrarActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Buscar");
+        Buscar.setBackground(new java.awt.Color(255, 255, 255));
+        Buscar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Buscar.setForeground(new java.awt.Color(0, 0, 0));
+        Buscar.setText("Buscar");
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Salir");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setBackground(new java.awt.Color(255, 255, 255));
+        Salir.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Salir.setForeground(new java.awt.Color(0, 0, 0));
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout MenuEsquemasPanelLayout = new javax.swing.GroupLayout(MenuEsquemasPanel);
+        MenuEsquemasPanel.setLayout(MenuEsquemasPanelLayout);
+        MenuEsquemasPanelLayout.setHorizontalGroup(
+            MenuEsquemasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuEsquemasPanelLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addComponent(jLabel1)
+                .addComponent(LabelMenuEsquemas)
                 .addContainerGap(87, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuEsquemasPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(MenuEsquemasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Insertar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Crear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Borrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(105, 105, 105))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        MenuEsquemasPanelLayout.setVerticalGroup(
+            MenuEsquemasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MenuEsquemasPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addComponent(LabelMenuEsquemas)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(Crear)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(Insertar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(Borrar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(Buscar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(Salir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(MenuEsquemasPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_BorrarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void InsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_InsertarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         System.exit(0);//para salir de la pantalla
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_SalirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         new Creacion().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_CrearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,12 +180,12 @@ public class Menu_Esquemas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton Borrar;
+    private javax.swing.JButton Buscar;
+    private javax.swing.JButton Crear;
+    private javax.swing.JButton Insertar;
+    private javax.swing.JLabel LabelMenuEsquemas;
+    private javax.swing.JPanel MenuEsquemasPanel;
+    private javax.swing.JButton Salir;
     // End of variables declaration//GEN-END:variables
 }

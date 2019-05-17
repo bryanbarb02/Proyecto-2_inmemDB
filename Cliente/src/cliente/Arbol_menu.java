@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package cliente;
-
+import PaqueteDatos.TipoArbol;
 /**
  *
  * @author kejor
@@ -16,6 +16,7 @@ public class Arbol_menu extends javax.swing.JFrame {
      */
     public Arbol_menu() {
         initComponents();
+        this.setLocationRelativeTo(null);//para centrar la pantalla
     }
 
     /**
@@ -27,27 +28,149 @@ public class Arbol_menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        PanelMenuArbol = new javax.swing.JPanel();
+        TituloArbolMenu = new javax.swing.JLabel();
+        B = new javax.swing.JButton();
+        Bmas = new javax.swing.JButton();
+        BinariodeBusqueda = new javax.swing.JButton();
+        RojoNegro = new javax.swing.JButton();
+        ALV = new javax.swing.JButton();
+        Splay = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+        TituloArbolMenu.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        TituloArbolMenu.setText("Árbol Menu");
+
+        B.setText("B");
+        B.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BActionPerformed(evt);
+            }
+        });
+
+        Bmas.setText("B+");
+        Bmas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BmasActionPerformed(evt);
+            }
+        });
+
+        BinariodeBusqueda.setText("Árbol Binario de Búsqueda");
+        BinariodeBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BinariodeBusquedaActionPerformed(evt);
+            }
+        });
+
+        RojoNegro.setText("Rojo-Negro");
+        RojoNegro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RojoNegroActionPerformed(evt);
+            }
+        });
+
+        ALV.setText("ALV");
+        ALV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ALVActionPerformed(evt);
+            }
+        });
+
+        Splay.setText("Splay");
+        Splay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SplayActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelMenuArbolLayout = new javax.swing.GroupLayout(PanelMenuArbol);
+        PanelMenuArbol.setLayout(PanelMenuArbolLayout);
+        PanelMenuArbolLayout.setHorizontalGroup(
+            PanelMenuArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMenuArbolLayout.createSequentialGroup()
+                .addGroup(PanelMenuArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelMenuArbolLayout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addGroup(PanelMenuArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TituloArbolMenu)
+                            .addGroup(PanelMenuArbolLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addGroup(PanelMenuArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Bmas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(B, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(PanelMenuArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(ALV)
+                                .addComponent(Splay))))
+                    .addGroup(PanelMenuArbolLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(BinariodeBusqueda))
+                    .addGroup(PanelMenuArbolLayout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(RojoNegro)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        PanelMenuArbolLayout.setVerticalGroup(
+            PanelMenuArbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMenuArbolLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TituloArbolMenu)
+                .addGap(18, 18, 18)
+                .addComponent(B)
+                .addGap(18, 18, 18)
+                .addComponent(Bmas)
+                .addGap(18, 18, 18)
+                .addComponent(BinariodeBusqueda)
+                .addGap(18, 18, 18)
+                .addComponent(RojoNegro)
+                .addGap(18, 18, 18)
+                .addComponent(ALV)
+                .addGap(18, 18, 18)
+                .addComponent(Splay)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 300));
+        getContentPane().add(PanelMenuArbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ALVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALVActionPerformed
+        Tipo(4);
+        new Menu_Esquemas().setVisible(true);
+    }//GEN-LAST:event_ALVActionPerformed
+
+    private void BmasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmasActionPerformed
+        Tipo(1);
+        new Menu_Esquemas().setVisible(true);
+    }//GEN-LAST:event_BmasActionPerformed
+
+    private void BinariodeBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinariodeBusquedaActionPerformed
+        Tipo(2);
+        new Menu_Esquemas().setVisible(true);
+    }//GEN-LAST:event_BinariodeBusquedaActionPerformed
+
+    private void RojoNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RojoNegroActionPerformed
+        Tipo(3);
+        new Menu_Esquemas().setVisible(true);
+    }//GEN-LAST:event_RojoNegroActionPerformed
+
+    private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
+        Tipo(0);
+        new Menu_Esquemas().setVisible(true);
+    }//GEN-LAST:event_BActionPerformed
+
+    private void SplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SplayActionPerformed
+        Tipo(5);
+        new Menu_Esquemas().setVisible(true);
+    }//GEN-LAST:event_SplayActionPerformed
+    public void Tipo(int val){
+        TipoArbol tipoarbol = new TipoArbol();
+        tipoarbol.TipoArbol(val);
+        dispose();
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -84,6 +207,13 @@ public class Arbol_menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton ALV;
+    private javax.swing.JButton B;
+    private javax.swing.JButton BinariodeBusqueda;
+    private javax.swing.JButton Bmas;
+    private javax.swing.JPanel PanelMenuArbol;
+    private javax.swing.JButton RojoNegro;
+    private javax.swing.JButton Splay;
+    private javax.swing.JLabel TituloArbolMenu;
     // End of variables declaration//GEN-END:variables
 }

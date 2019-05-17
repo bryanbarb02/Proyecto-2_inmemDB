@@ -4,11 +4,10 @@
  * and open the template in the editor.
  */
 package PaqueteDatos;
-import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author Fallas
+ * @author Kevin 
  */
 public class DatoColumna {
     List Esquema=null;
@@ -17,6 +16,14 @@ public class DatoColumna {
         Esquema = esquema;
         System.out.print(Esquema);
     }
-    
+
+    public List getEsquema() {
+        return Esquema;
+    }
+
+    public void setEsquema(List Esquema) {
+        this.Esquema = Esquema;
+    }
+      
 }
 

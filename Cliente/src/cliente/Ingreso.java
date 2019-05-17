@@ -29,50 +29,48 @@ public class Ingreso extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        LabelIP = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        IpText = new javax.swing.JTextPane();
+        Siguente = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
+        LabelInmemDB = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 255));
         setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        LabelIP.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        LabelIP.setForeground(new java.awt.Color(0, 0, 0));
+        LabelIP.setText("Ingrese IP :");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ingrese IP :");
+        IpText.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(IpText);
 
-        jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(jTextPane1);
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Siguinte");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Siguente.setBackground(new java.awt.Color(255, 255, 255));
+        Siguente.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Siguente.setForeground(new java.awt.Color(0, 0, 0));
+        Siguente.setText("Siguinte");
+        Siguente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SiguenteActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setBackground(new java.awt.Color(255, 255, 255));
+        Salir.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        Salir.setForeground(new java.awt.Color(0, 0, 0));
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("InmemDB");
+        LabelInmemDB.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        LabelInmemDB.setForeground(new java.awt.Color(0, 0, 0));
+        LabelInmemDB.setText("InmemDB");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,31 +82,31 @@ public class Ingreso extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(Siguente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2))
+                                .addComponent(Salir))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(LabelIP)
                                 .addGap(9, 9, 9)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LabelInmemDB, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(LabelInmemDB)
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(LabelIP)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)))
+                    .addComponent(Siguente)
+                    .addComponent(Salir)))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 100));
@@ -118,17 +116,17 @@ public class Ingreso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new Menu_Esquemas().setVisible(true);
+    private void SiguenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguenteActionPerformed
+        new Arbol_menu().setVisible(true);
         String Ip=null;
-        Ip=(jTextPane1.getText());
+        Ip=(IpText.getText());
         System.out.println(Ip);
-        //System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_SiguenteActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         System.exit(0);//para salir de la pantalla
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,12 +164,12 @@ public class Ingreso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextPane IpText;
+    private javax.swing.JLabel LabelIP;
+    private javax.swing.JLabel LabelInmemDB;
+    private javax.swing.JButton Salir;
+    private javax.swing.JButton Siguente;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

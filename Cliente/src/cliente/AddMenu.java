@@ -29,44 +29,44 @@ public class AddMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        PanelAddMenu = new javax.swing.JPanel();
+        CrearEsquema = new javax.swing.JButton();
+        EditarColumnas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Crear otro Esquema");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CrearEsquema.setText("Crear otro Esquema");
+        CrearEsquema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CrearEsquemaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Editar las Columnas");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        EditarColumnas.setText("Editar las Columnas");
+        EditarColumnas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                EditarColumnasActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelAddMenuLayout = new javax.swing.GroupLayout(PanelAddMenu);
+        PanelAddMenu.setLayout(PanelAddMenuLayout);
+        PanelAddMenuLayout.setHorizontalGroup(
+            PanelAddMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(CrearEsquema)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(EditarColumnas)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PanelAddMenuLayout.setVerticalGroup(
+            PanelAddMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddMenuLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addGroup(PanelAddMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CrearEsquema)
+                    .addComponent(EditarColumnas))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -74,27 +74,27 @@ public class AddMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelAddMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelAddMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void CrearEsquemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearEsquemaActionPerformed
         new Creacion().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_CrearEsquemaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void EditarColumnasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarColumnasActionPerformed
         new Editar1().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_EditarColumnasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,8 +132,8 @@ public class AddMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton CrearEsquema;
+    private javax.swing.JButton EditarColumnas;
+    private javax.swing.JPanel PanelAddMenu;
     // End of variables declaration//GEN-END:variables
 }
