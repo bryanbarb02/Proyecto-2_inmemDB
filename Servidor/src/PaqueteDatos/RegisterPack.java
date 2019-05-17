@@ -4,108 +4,108 @@ package PaqueteDatos;
 import java.io.Serializable;
 
 /**
- * Class used to register a new player.
+ * Clase utilizada para registrar un nuevo jugador.
  */
-public class RegisterPack implements Serializable{
+public class PaqueteRegistro implements Serializable{
     
     /**
-      * Ip adress of the player.
+      * Dirección Ip del jugador.
       */
-    private String playerIp;
+    private String JugadorIP;
     
     /**
-      * Nickname of the player.
+      * Nombre del jugador.
       */
-    private String playerName;
+    private String nombreServidor;
     
     /**
-      * Number of the player.
+      * Número del jugador.
       */
-    private int playerNumber;
+    private int numeroJugador;
     
     /**
-      * Name of the other player.
+      * Nombre del otro jugador.
       */
-    private String otherPlayerName;
+    private String nombreOtroJugador;
     
     /**
-     * Default constructor of the class RegisterPack.
+     * Constructor por defecto de la clase RegisterPack.
      */
-    public RegisterPack(){}
+    public PaqueteRegistro(){}
     
     /**
-     * Constructor of the class RegisterPack.
-     * @param playerIp {@link RegisterPack#playerIp}
-     * @param playerName {@link RegisterPack#playerName}
-     * @param playerNumber {@link RegisterPack#playerNumber}
+     * Constructor de la clase RegisterPack.
+     * @param JugadorIP {@link RegisterPack#JugadorIP}
+     * @param nombreJugador {@link RegisterPack#nombreServidor}
+     * @param numeroJugador {@link RegisterPack#numeroJugador}
      */
-    public RegisterPack(String playerIp, String playerName,int playerNumber){
-        this.playerIp = playerIp;
-        this.playerName = playerName;
-        this.playerNumber = playerNumber;
+    public PaqueteRegistro(String JugadorIP, String nombreJugador,int numeroJugador){
+        this.JugadorIP = JugadorIP;
+        this.nombreServidor = nombreJugador;
+        this.numeroJugador = numeroJugador;
     }
 
     /**
-     * Returns the variable playerIp.
-     * @return {@link RegisterPack#playerIp}
+     * Devuelve la variable playerIp.
+     * @return {@link PaqueteRegistro#JugadorIP}
      */
     public String getPlayerIp() {
-        return playerIp;
+        return JugadorIP;
     }
 
     /**
-     * Sets the variable playerIp.
-     * @param playerIp {@link RegisterPack#playerIp}
+     * Establece la variable playerIp.
+     * @param playerIp {@link PaqueteRegistro#JugadorIP}
      */
     public void setPlayerIp(String playerIp) {
-        this.playerIp = playerIp;
+        this.JugadorIP = playerIp;
     }
 
     /**
-     * Returns the variable playerName.
-     * @return {@link RegisterPack#playerName}
+     * Devuelve la variable playerName.
+     * @return {@link PaqueteRegistro#nombreServidor}
      */
     public String getPlayerName() {
-        return playerName;
+        return nombreServidor;
     }
 
     /**
-     * Sets the variable playerName.
-     * @param playerName {@link RegisterPack#playerName}
+     * Establece la variable playerName.
+     * @param playerName {@link PaqueteRegistro#nombreServidor}
      */
     public void setPlayerName(String playerName) {
-        this.playerName = playerName;
+        this.nombreServidor = playerName;
     }
 
     /**
-     * Returns the variable playerNumber.
-     * @return {@link RegisterPack#playerNumber}
+     * Devuelve la variable playerNumber.
+     * @return {@link PaqueteRegistro#numeroJugador}
      */
     public int getPlayerNumber() {
-        return playerNumber;
+        return numeroJugador;
     }
 
     /**
-     * Sets the variable playerNumber.
-     * @param playerNumber {@link RegisterPack#playerNumber}
+     * Establece la variable playerNumber.
+     * @param playerNumber {@link PaqueteRegistro#numeroJugador}
      */
     public void setPlayerNumber(int playerNumber) {
-        this.playerNumber = playerNumber;
+        this.numeroJugador = playerNumber;
     }
     
     /**
-     * Returns the variable playerNumber.
-     * @return {@link RegisterPack#otherPlayerName}
+     * Devuelve la variable playerNumber.
+     * @return {@link PaqueteRegistro#nombreOtroJugador}
      */
     public String getOtherPlayerName() {
-        return otherPlayerName;
+        return nombreOtroJugador;
     }
 
     /**
-     * Sets the variable otherPlayerName.
+     * Establece la variable otherPlayerName.
      * @param otherPlayerName
      */
     public void setOtherPlayerName(String otherPlayerName) {
-        this.otherPlayerName = otherPlayerName;
+        this.nombreOtroJugador = otherPlayerName;
     }
 }
