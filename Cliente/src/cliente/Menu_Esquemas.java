@@ -139,7 +139,7 @@ public class Menu_Esquemas extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirActionPerformed
 
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
-        new Creacion().setVisible(true);
+        new NewCreacion().setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed
 
     /**
