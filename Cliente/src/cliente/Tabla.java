@@ -1,5 +1,6 @@
 package cliente;
 
+import java.util.ArrayList;
 import javax.swing.JFrame; 
 import javax.swing.JScrollPane; 
 import javax.swing.JTable; 
@@ -16,15 +17,24 @@ public class Tabla {
     JTable j; 
   
     // Constructor 
-    Tabla() 
+    public Tabla(String name, ArrayList<String> columnas) 
     { 
         
         // Frame initiallization 
         f = new JFrame(); 
   
         // Frame Title
-        String Name="Barcelona";
-        String[] NombreColumnas = { "Jugador", "Salario", "Numero","Estatus" };
+        String Name=name;
+        String[] NombreColumnas = new String[columnas.size()];
+//        String[] NombreColumnas = { "Jugador", "Salario", "Numero","Estatus" };
+        int i=0;
+        for (String columna : columnas) {
+            NombreColumnas[i]=columna;
+            System.out.println("Nombre de la columna:"+columna);
+            i++;
+            
+        }
+        
         String [] [] Datos= { 
             { "Messe", "TU", "10","activo" }, 
             { "Suares", "PINCHE", "9","Activo" },
@@ -55,7 +65,7 @@ public class Tabla {
     // Driver  method 
     public static void main(String[] args) 
     { 
-        new Tabla(); 
+//        new Tabla(); 
     } 
 } 
 

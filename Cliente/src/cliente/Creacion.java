@@ -199,9 +199,8 @@ public class Creacion extends javax.swing.JFrame {
     }
      public void CrearColumna() {
       System.out.println(columna);
-      DatoColumna enviarlista = new DatoColumna();
-      enviarlista.ObtenerLista(columna);
-      columna=null;
+//      DatoColumna enviarlista = new DatoColumna(columna);
+      //columna=null;
     }
     
     /**
