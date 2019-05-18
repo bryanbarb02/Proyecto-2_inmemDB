@@ -19,7 +19,7 @@ import PaqueteDatos.RegistroCliente;
 
 /**
  *
- * @author kejor
+ * @author 
  */
     
 public class Cliente  implements Runnable{
