@@ -23,7 +23,6 @@ public class NewCreacion extends javax.swing.JFrame {
     public NewCreacion() {
         tableNames= new ArrayList<>();
         initComponents();
-        this.setLocationRelativeTo(null);//para centrar la pantalla
     }
 
     /**
@@ -127,7 +126,6 @@ public class NewCreacion extends javax.swing.JFrame {
         // TODO add your handling code here:        
         System.out.println("Ingresado:"+jTextFieldTableName.getText());
         tableNames.add(jTextFieldTableName.getText());
-        jTextFieldTableName.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -135,7 +133,6 @@ public class NewCreacion extends javax.swing.JFrame {
         Encabezados datos= new Encabezados(jTextFieldName.getText(), tableNames);
         
         DatoColumna datoColumna= new DatoColumna(datos);
-        jTextFieldName.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

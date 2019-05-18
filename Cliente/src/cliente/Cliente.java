@@ -28,15 +28,33 @@ public class Cliente  implements Runnable{
     public static DatoColumna columna;
     public static DatoFila fila;
     public static GetIP menu; 
+    private static boolean registered = false;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+       Thread comenzar = new Thread(new Cliente());
+        comenzar.start();
+        System.out.println("1");
         new Ingreso().setVisible(true);
+        columna = columna; 
+        menu = new GetIP();
+        System.out.println(columna + "Dato que contiene la columna");        
+        clientSend(columna,"DatoColumna");
+        while (!registered){
+           try {Thread.sleep(10);
+            }catch (Exception e){}
+     
+               
+           }
+        
     }
+    
+    
   
-        public static void clientSend(Object object, Object classReference){
+    public static void clientSend(Object object, Object classReference){
         try {
 
             Socket clientSocket = new  Socket(menu.getIP(), 9090);
@@ -98,7 +116,7 @@ public class Cliente  implements Runnable{
                     if (reference.getReference().equals("DatoColumna")){
                         System.out.println("Client recieved a server response: DotConnectionPack");
                         DatoColumna reciveColumnas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);
-                        columna.getEsquema();
+                        columna.setEsquema(reciveColumnas.getEsquema());
                         break;
                     }
                     
