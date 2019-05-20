@@ -32,10 +32,17 @@ public class Cliente  implements Runnable{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+        public static void main(String[] args) {
+        
+       Thread comenzar = new Thread(new Cliente());
+        comenzar.start();
+        System.out.println("1"); 
         new Ingreso().setVisible(true);
-    }
-  
+        menu = new GetIP();
+        }
+        
+        
+        
         public static void clientSend(Object object, Object classReference){
         try {
 
