@@ -16,6 +16,7 @@ import PaqueteDatos.TipoArbol;
 import PaqueteDatos.DatoFila;
 import jsonLogic.JSONUtil;
 import PaqueteDatos.RegistroCliente;
+import PaqueteDatos.Encabezados;
 
 /**
  *
@@ -38,21 +39,46 @@ public class Cliente  implements Runnable{
        Thread comenzar = new Thread(new Cliente());
         comenzar.start();
         System.out.println("1");
+       // while(columna == null){
         new Ingreso().setVisible(true);
-        columna = columna; 
+    //}
+        //columna.getEsquema();
+    //columna.setEsquema(Esquema);
         menu = new GetIP();
-        System.out.println(columna + "Dato que contiene la columna");        
+        //System.out.println(columna + "Dato que contiene la columna"); 
+       // clientSend(columna,"DatoColumna"); 
+         
+        
+   
+       
+        Esquema(columna);
+        
+        /*if(columna == null){
+         System.out.println("nulo el dato");
+        }else{
         clientSend(columna,"DatoColumna");
+        }*/
         while (!registered){
            try {Thread.sleep(10);
             }catch (Exception e){}
      
                
            }
+    }
+        ////////////////////////////////////////////////////////////////////////
+    
+    
+    ////////////////////////////////////////////////////////////////////////////
+    public static DatoColumna Esquema(DatoColumna Esquema){
+        if(columna ==null ){
+            System.out.println("nulo el dato");
+        }else{
+            clientSend(columna,"DatoColumna");
+        }
+        return columna;
         
     }
-    
-    
+
   
     public static void clientSend(Object object, Object classReference){
         try {

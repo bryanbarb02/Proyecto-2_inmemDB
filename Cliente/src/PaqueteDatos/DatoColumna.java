@@ -7,6 +7,8 @@ package PaqueteDatos;
 import cliente.Tabla;
 import java.util.ArrayList;
 import java.util.List;
+import cliente.Cliente;
+import static cliente.Cliente.clientSend;
 /**
  *
  * @author Kevin 
@@ -17,11 +19,16 @@ public class DatoColumna {
     public DatoColumna(Encabezados datos){
         //this.equals(columna);
         System.out.println("Name:"+datos.name);
+        System.out.println("columnas: "+ datos.tableNames);
         
         for (String columna : datos.tableNames) {
             System.out.println("Nombre de la columna:"+columna);
+            
         }
-        
+        clientSend(datos.name, "DatoColumna");
+        clientSend(datos.tableNames, "DatoColumna");
+        System.out.println(datos.name);
+        System.out.println(datos.tableNames);
         //////Diagmos que es un clic
         Tabla test= new Tabla(datos.name, datos.tableNames);
         

@@ -87,7 +87,7 @@ public class AddMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CrearEsquemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearEsquemaActionPerformed
-        new Creacion().setVisible(true);
+        new NewCreacion().setVisible(true);
         dispose();
     }//GEN-LAST:event_CrearEsquemaActionPerformed
 
