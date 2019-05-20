@@ -5,6 +5,7 @@
  */
 package PaqueteDatos;
 import PaqueteDatos.DatoColumna;
+import PaqueteDatos.DatoFila;
 import cliente.Tabla;
 import java.util.List;
 /**
@@ -14,8 +15,11 @@ import java.util.List;
 
 public class DatoEsquema {
     Esquema Esquema;
-    public DatoEsquema(){
-        //Tabla test= new Tabla(datos.name, datos.tableNames);
+   // datos datos;
+   // public DatoEsquema(Fila datos || Encabezados datos){
+    public DatoEsquema(){    
+       // Tabla test= new Tabla(datos.name, datos.tableNames, datos.Fila);
+    //    Tabla test= new Tabla(Encabezados.name, Encabezados.tableNames, Fila.Fila);
     }
     public Fila ObtenerFila(Fila Fila){
        return Fila; 
@@ -26,4 +30,5 @@ public class DatoEsquema {
     public List ObtenerNombreColumna (Encabezados Encabezados){
         return Encabezados.tableNames;
     }
+    
 }

@@ -87,6 +87,7 @@ public class Cliente  implements Runnable{
                 
                 String recievedObjectAsString = in.readLine();
                 String recievedClassReferenceAsString = in.readLine();
+                //List recievedObjectAsString = in.readLine();
                 
                 in.close();
                 fromClientSocket.close();
@@ -109,10 +110,16 @@ public class Cliente  implements Runnable{
                         break;
                     }
                     
-                    if (reference.getReference().equals("DatoColumna")){
+                    if (reference.getReference().equals("DatoFila")){
                         System.out.println("Client recieved a server response: DotConnectionPack");
                         DatoFila reciveFilas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoFila.class);
                         //fila.ObtenerLista(reciveFilas.getEsquema());
+                        break;
+                    }
+                    if (reference.getReference().equals("DatoColumna")){
+                        System.out.println("Client recieved a server response: DotConnectionPack");
+                        //DatoNombre reciveNombre = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoNombre.class);
+                        columna.getEsquema();
                         break;
                     }
                     /*

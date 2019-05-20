@@ -1,6 +1,7 @@
 package cliente;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame; 
 import javax.swing.JScrollPane; 
 import javax.swing.JTable; 
@@ -67,6 +68,10 @@ public class Tabla {
     { 
 //        new Tabla(); 
     } 
+
+    public Tabla(String name, ArrayList<String> tableNames, ArrayList<List> Fila) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 } 
 
 
