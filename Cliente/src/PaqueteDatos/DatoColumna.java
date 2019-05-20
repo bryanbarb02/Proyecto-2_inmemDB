@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package PaqueteDatos;
-import static cliente.Cliente.clientSend;
 import cliente.Tabla;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,21 +17,19 @@ public class DatoColumna {
     public DatoColumna(Encabezados datos){
         //this.equals(columna);
         Esquema=datos;
-        System.out.println("Name:"+datos.name);
+        //System.out.println("Name:"+datos.name);
         System.out.println("nombre de las columnas: "+datos.tableNames);
         for (String columna : datos.tableNames) {
             System.out.println("Nombre de la columna:"+columna);
         }
         
-        clientSend(datos.name, "DatoColumna");
-        clientSend(datos.tableNames, "DatoColumna");
-        System.out.println(datos.name);
-        System.out.println(datos.tableNames);
+        //////Diagmos que es un clic
+        ///Tabla test= new Tabla(datos.name, datos.tableNames);
         
-   
-        //Tabla test= new Tabla(datos.name, datos.tableNames);
+        ///
         
- 
+//        System.out.println("Columna in new class:"+this.Esquema);
+       
     }
     public Encabezados getEsquema() {
         return  Esquema;
