@@ -13,10 +13,10 @@ import java.util.List;
  */
 public class DatoColumna {
     
-    Encabezados Esquema;
+    ArrayList<String> NombreColumna;
     public DatoColumna(Encabezados datos){
         //this.equals(columna);
-        Esquema=datos;
+        NombreColumna=datos.tableNames;
         //System.out.println("Name:"+datos.name);
         System.out.println("nombre de las columnas: "+datos.tableNames);
         for (String columna : datos.tableNames) {
@@ -31,12 +31,12 @@ public class DatoColumna {
 //        System.out.println("Columna in new class:"+this.Esquema);
        
     }
-    public Encabezados getEsquema() {
-        return  Esquema;
+    public ArrayList<String> getEsquema() {
+        return  NombreColumna;
     }
 
     public void setEsquema(List Fila) {
-        this.Esquema = Esquema;
+        this.NombreColumna = NombreColumna;
     }
     
     
