@@ -42,7 +42,7 @@ public class AddMenu extends javax.swing.JFrame {
             }
         });
 
-        EditarColumnas.setText("Editar las Columnas");
+        EditarColumnas.setText("Agregar otra fila");
         EditarColumnas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditarColumnasActionPerformed(evt);
@@ -56,7 +56,7 @@ public class AddMenu extends javax.swing.JFrame {
             .addGroup(PanelAddMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(CrearEsquema)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addComponent(EditarColumnas)
                 .addContainerGap())
         );

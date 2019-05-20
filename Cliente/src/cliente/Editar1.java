@@ -5,6 +5,7 @@
  */
 package cliente;
 import PaqueteDatos.DatoFila;
+import PaqueteDatos.Fila;
 /**
  *
  * @author Kevin Rodríguez
@@ -13,11 +14,14 @@ import PaqueteDatos.DatoFila;
 import java.util.ArrayList;
 import java.util.List;
 public class Editar1 extends javax.swing.JFrame {
-
+    ArrayList<List> Filas;
+    ArrayList<String> FilasTemp;
     /**
      * Creates new form Editar1
      */
     public Editar1() {
+        Filas= new ArrayList<>();
+        FilasTemp = new ArrayList<>();
         initComponents();
         this.setLocationRelativeTo(null);//para centrar la pantalla
         
@@ -117,35 +121,22 @@ public class Editar1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        String Fila=null;
-        Fila=(EditText.getText());
-        System.out.println(Fila);
-        Creacion (Fila);
+        System.out.println("Ingresado:"+EditText.getText());
+        FilasTemp.add(EditText.getText());
         EditText.setText("");
     }//GEN-LAST:event_AddActionPerformed
 
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
-        CrearColumna ();
+        Filas.add(FilasTemp);
+        Fila datos= new Fila(Filas);
+        System.out.println("Ingresado:"+Filas);
+        DatoFila datoFila= new DatoFila(datos);
         EditText.setText("");
         new AddMenu().setVisible(true);
+        dispose();
     }//GEN-LAST:event_CrearActionPerformed
-    List Fila = new ArrayList();
-    /**
-     * Agregar nuevo dato de columna.
-     * @param Fil tipo List
-     */
-    public void Creacion (String Fil){
-        Fila.add(Fil);
-    }
-    /**
-     * Crea la columna y manda a la clase DatoFila 
-     */
-    public void CrearColumna() {
-      System.out.println(Fila);
-      DatoFila enviarlista = new DatoFila();
-      enviarlista.ObtenerLista(Fila);
-      Fila=null;
-    }
+    
+    
     /**
      * @param args the command line arguments
      */

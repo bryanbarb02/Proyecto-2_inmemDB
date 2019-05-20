@@ -7,19 +7,26 @@ import java.util.List;
  * @author kejor
  */
 public class DatoFila {
-     List Fila=null;
-    public void ObtenerLista (List fila){
-        System.out.println(fila);
-        Fila = fila;
-        System.out.print(Fila);
-    }
+     Fila fila;
+     public DatoFila(Fila datos){
+        fila=datos;
+        
+        
+        for (List Filax : datos.Fila) {
+            System.out.println("Nombre de la Fila:"+Filax);
+        }
+        DatoEsquema enviarfila = new DatoEsquema();
+        //enviarfila.ObtenerFila(datos);
+         
+     }
+    
 
-    public List getEsquema() {
-        return Fila;
+    public Fila getEsquema() {
+        return fila;
     }
 
     public void setEsquema(List Fila) {
-        this.Fila = Fila;
+        this.fila = fila;
     }
        
 }
