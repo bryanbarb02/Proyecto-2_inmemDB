@@ -36,7 +36,7 @@ public class ServerController implements Runnable{
     // private static int turnNumber;
     // int estático privado maxTurnNumber;
     private DatoColumna Columna;
-    public List DatosAlmacenados;
+    
     /**
      * Método principal para serverController. Inicializa todos los atributos y comienza el hilo.
      * Para escuchar conexiones.
@@ -91,16 +91,7 @@ public class ServerController implements Runnable{
         }
     }
     */
-    
-    public void almacenarDatos(List Datos){
-        this.DatosAlmacenados = Datos;  
-    }
-    public List getAlmacenarDatos(){
-        return DatosAlmacenados;
-    }
-    
-    
-    
+   
     /**
      * Receives a LinkedList representing a figure and it converts it to a String
      * @param figure
@@ -297,18 +288,32 @@ public class ServerController implements Runnable{
                 
                 while (objetoRecibidoComoString != null && referenciaRecibidaComoString != null){
                     ClaseReferencia referencia = JSONUtil.convertJsonToJava(referenciaRecibidaComoString, ClaseReferencia.class);
-                    if (referencia.getReferencia().equals("DatoColumna")){
-                        System.out.println("llego Dato Columna");
-                        DatoColumna recibeDatoColumna = JSONUtil.convertJsonToJava(objetoRecibidoComoString, DatoColumna.class);                        
-                        almacenarDatos((List) recibeDatoColumna);
+                    
+                    // Entrada al servidor del nombre del esquema
+                    if (referencia.getReferencia().equals("NombreEsquema")){
+                        NombreEsquema nombreEsq = JSONUtil.convertJsonToJava(objetoRecibidoComoString, NombreEsquema.class); 
+
+                        System.out.println("Llegó el dato: NOMBRE_ESQUEMA ");
+                        NombreEsquema nombreEsquema= new NombreEsquema(objetoRecibidoComoString); //Guarda el nombre del esquema en la clase NombreEsquema
+                        System.out.println(nombreEsquema.getNOMBRE_ESQUEMA() + "\n");
+                        break;                 
+                    }
+                    // Entrada al servidor del nombre del nombre de la columna 
+                    if (referencia.getReferencia().equals("NombreColumna")){
+                        NombreColumna nombreColum = JSONUtil.convertJsonToJava(objetoRecibidoComoString, NombreColumna.class); 
+
+                        System.out.println("Llego le dato: NOMBRE_COLUMNA ");
+                        NombreColumna nombreColumna= new NombreColumna(objetoRecibidoComoString);//Guarda el nombre del esquema en la clase NombreColumna
+                        System.out.println(nombreColumna.getNOMBRE_COLUMNA() + "\n");
                         break;
                     }
+                    /**
                     if(referencia.getReferencia().equals("RegidtroCliente")){
                         System.out.println("Llego para registrar cliente");
                         RegistroCliente receivedRegisterPack = JSONUtil.convertJsonToJava(objetoRecibidoComoString, RegistroCliente.class);                        
                         registroCliente(receivedRegisterPack);
                         break;
-                    }
+                    }*/
                     /*
                     if(reference.getReference().equals("DataPack")){
                         System.out.println("Data pack arrived");
