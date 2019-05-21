@@ -7,6 +7,7 @@ package cliente;
 
 import PaqueteDatos.DatoColumna;
 import PaqueteDatos.Encabezados;
+import PaqueteDatos.DatoNombre;
 import java.util.ArrayList;
 
 /**
@@ -135,6 +136,7 @@ public class NewCreacion extends javax.swing.JFrame {
         Encabezados datos= new Encabezados(jTextFieldName.getText(), tableNames);
         
         DatoColumna datoColumna= new DatoColumna(datos);
+        DatoNombre DatoNombre= new DatoNombre(datos);
         jTextFieldName.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
