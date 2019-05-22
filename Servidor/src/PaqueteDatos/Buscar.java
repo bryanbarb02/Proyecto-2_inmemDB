@@ -38,7 +38,7 @@ public class Buscar {
             avl.contains(key);
         }
         
-        if (esquema.getTipoArbol() == "Binario"){
+        if (esquema.getTipoArbol() == "BinarioBusqueda"){
             ArbolBinario ab = new ArbolBinario();
             ab.insertar(esquema.getDatos());
             ab.contains(key);
