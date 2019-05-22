@@ -14,6 +14,7 @@ import PaqueteDatos.DatoColumna;
 import PaqueteDatos.GetIP;
 import PaqueteDatos.TipoArbol;
 import PaqueteDatos.DatoFila;
+import PaqueteDatos.DatoNombre;
 import jsonLogic.JSONUtil;
 import PaqueteDatos.RegistroCliente;
 
@@ -28,6 +29,7 @@ public class Cliente  implements Runnable{
     public static DatoColumna columna;
     public static DatoFila fila;
     public static GetIP menu; 
+    public static DatoNombre nombre;
 
     /**
      * @param args the command line arguments
@@ -103,14 +105,14 @@ public class Cliente  implements Runnable{
                     }
                     
                     
-                    if (reference.getReference().equals("DatoColumna")){
+                    if (reference.getReference().equals("NombreEsquema")){
                         System.out.println("Client recieved a server response: DotConnectionPack");
                         DatoColumna reciveColumnas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);
                         columna.getEsquema();
                         break;
                     }
                     
-                    if (reference.getReference().equals("DatoFila")){
+                    if (reference.getReference().equals("NombreColumna")){
                         System.out.println("Client recieved a server response: DotConnectionPack");
                         DatoFila reciveFilas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoFila.class);
                         //fila.ObtenerLista(reciveFilas.getEsquema());
