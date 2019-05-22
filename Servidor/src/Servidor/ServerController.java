@@ -14,8 +14,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import PaqueteDatos.DatoColumna;
 import PaqueteDatos.Esquema;
+import PaqueteDatos.NombreArbol;
 import PaqueteDatos.NombreColumna;
 import PaqueteDatos.NombreEsquema;
+import PaqueteDatos.NombreListas;
 import PaqueteDatos.RegistroCliente;
 import PaqueteDatos.crearEsquema;
 import java.util.List;
@@ -141,9 +143,25 @@ public class ServerController implements Runnable{
                         System.out.println(nombreColumna.getNOMBRE_COLUMNA() + "\n");
                         break;
                     }
-//                    crearEsquema es = new crearEsquema();
-//                    System.out.println(es.getNombreEsquema());
-//                    System.out.println(es.getNombreColumna());
+                    if (referencia.getReferencia().equals("NombreArbol")){
+                        NombreArbol nombreArbo = JSONUtil.convertJsonToJava(objetoRecibidoComoString, NombreArbol.class); 
+
+                        System.out.println("Llego le dato: Nombres_Arbol ");
+                        NombreArbol nombreArbol= new NombreArbol(objetoRecibidoComoString);//Guarda el nombre del esquema en la clase NombreColumna
+                        nombreArbol.setGetNombre_Arbol(objetoRecibidoComoString);
+                        System.out.println(nombreArbol.getGetNombre_Arbol() + "\n");
+                        break;
+                    }
+                    if (referencia.getReferencia().equals("NombreListas")){
+                        NombreListas nombreList = JSONUtil.convertJsonToJava(objetoRecibidoComoString, NombreListas.class); 
+
+                        System.out.println("Llego le dato: NombresListas ");
+                        NombreListas nombreListas= new NombreListas(objetoRecibidoComoString);//Guarda el nombre del esquema en la clase NombreColumna
+                        nombreListas.setNombreListas(objetoRecibidoComoString);
+                        System.out.println(nombreListas.getNombreListas() + "\n");
+                        break;
+                    }
+
                     
                     
                 }  
