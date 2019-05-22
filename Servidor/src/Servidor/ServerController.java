@@ -57,7 +57,7 @@ public class ServerController implements Runnable{
     }
     
     /**
-     * Gets the data needed to send RegisterPacks to both players.
+     * Obtiene los datos necesarios para enviar RegisterPacks a ambos jugadores.
      */
     public void enviarRegistroCliente(){
         ClaseReferencia claseRederencia = new ClaseReferencia("RegistroCliente");
@@ -68,10 +68,10 @@ public class ServerController implements Runnable{
     }
     
     /**
-     * Sent data to the clients through sockets and in a JSON format. 
-     * @param object1 Object that contains the data that will be sent.
-     * @param object2 Identifier of the class sent.
-     * @param ipAddress IP address of the client.
+     * Envíe datos a los clientes a través de sockets y en un formato JSON.
+     * @param object1 Objeto que contiene los datos que se enviarán.
+     * @param object2 Identificador de la clase enviada.
+     * @param ipAddress dirección IP del cliente.
      */
     public void servidorEnviar(Object objeto1, Object objeto2, String DireccionIP){
   
