@@ -179,7 +179,8 @@ public class Editar1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         tb.getNombredecolumnas().add(0,"Ídice");
         Tabla test= new Tabla(tb.getNombre(),tb.getNombredecolumnas(),tb.getFilas());
-        clientSend(tb.getFilas(), "NombreListas");
+        
+        clientSend(tb.getFilas(), "DatoFila");
         System.out.println(tb.getFilas() + "Se envian estos datos fila");
         //new Menu_Esquemas().setVisible(true);
         //dispose();
