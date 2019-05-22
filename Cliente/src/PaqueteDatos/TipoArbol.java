@@ -5,6 +5,8 @@
  */
 package PaqueteDatos;
 
+import static cliente.Cliente.clientSend;
+
 /**
  *
  * @author kejor
@@ -31,6 +33,8 @@ public class TipoArbol {
             TipoArbol = "Splay";
         }
         System.out.println(TipoArbol);
+        clientSend(TipoArbol, "DatoFila");
+        System.out.println(TipoArbol + "Se envian estos datos Arbol");
     }
 
     public String getTipoArbol() {

@@ -5,8 +5,10 @@
  */
 package cliente;
 import PaqueteDatos.DatoFila;
+import static PaqueteDatos.DatoFila.tb;
 import PaqueteDatos.Fila;
 import PaqueteDatos.TableInformation;
+import static cliente.Cliente.clientSend;
 import java.awt.event.ActionListener;
 
 /**
@@ -162,6 +164,7 @@ public class Editar1 extends javax.swing.JFrame {
         System.out.println(FilasTemp);
         Filas.add(FilasTemp);
         tb.setFilas(Filas);
+        
         System.out.println("tb: "+tb.getFilas());
         //Fila datos= new Fila(Filas);
         System.out.println("Ingresado:"+Filas);
@@ -176,6 +179,8 @@ public class Editar1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         tb.getNombredecolumnas().add(0,"Ídice");
         Tabla test= new Tabla(tb.getNombre(),tb.getNombredecolumnas(),tb.getFilas());
+        clientSend(tb.getFilas(), "DatoFila");
+        System.out.println(tb.getFilas() + "Se envian estos datos fila");
         new Menu_Esquemas().setVisible(true);
         dispose();
     }//GEN-LAST:event_CrearEsquemaButtonActionPerformed

@@ -25,8 +25,12 @@ public class TableInformation {
         if (tableInformation == null){            
             tableInformation = new TableInformation();
         } 
-            return tableInformation;        
+        System.out.println("LLego aqui la table");
+            return tableInformation; 
+            
+            
     }
+    
 
     /**
      * @return the nombre

@@ -17,6 +17,8 @@ import PaqueteDatos.DatoFila;
 import PaqueteDatos.DatoNombre;
 import jsonLogic.JSONUtil;
 import PaqueteDatos.RegistroCliente;
+import PaqueteDatos.SingletonIP;
+
 
 /**
  *
@@ -30,6 +32,8 @@ public class Cliente  implements Runnable{
     public static DatoFila fila;
     public static GetIP menu; 
     public static DatoNombre nombre;
+    public static SingletonIP SIP;
+    
 
     /**
      * @param args the command line arguments
@@ -41,14 +45,16 @@ public class Cliente  implements Runnable{
         System.out.println("1"); 
         new Ingreso().setVisible(true);
         menu = new GetIP();
+        SIP = SingletonIP.getInstanceSingletonIP();
+        
         }
         
         
         
         public static void clientSend(Object object, Object classReference){
         try {
-
-            Socket clientSocket = new  Socket(menu.getIP(), 9090);
+            System.out.println(SIP.getIP() + " llego ip");
+            Socket clientSocket = new  Socket(SIP.getIP(), 9090);
             
             String sendObject = JSONUtil.convertJavaToJson(object);
             String sendClassReference = JSONUtil.convertJavaToJson(classReference);
@@ -97,47 +103,34 @@ public class Cliente  implements Runnable{
                 while (recievedObjectAsString != null && recievedClassReferenceAsString != null){
                     ClassReference reference = JSONUtil.convertJsonToJava(recievedClassReferenceAsString, ClassReference.class);
 
-                    if (reference.getReference().equals("RegisterPack")){
+                    /*if (reference.getReference().equals("RegisterPack")){
                         System.out.println("Client recieved a server response: RegisterPack");
                         RegistroCliente register = JSONUtil.convertJsonToJava(recievedObjectAsString, RegistroCliente.class);
                         this.IP = register.getClienteIp();
                         break;
-                    }
+                    }*/
                     
-                    
-                    if (reference.getReference().equals("NombreColumna")){
-                        System.out.println("Client recieved a server response: DotConnectionPack");
-                        DatoColumna reciveColumnas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);
-                        columna.getEsquema();
-                        break;
-                    }
                     
                     if (reference.getReference().equals("NombreEsquema")){
-                        System.out.println("Client recieved a server response: DotConnectionPack");
-                        DatoFila reciveFilas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoFila.class);
-                        //fila.ObtenerLista(reciveFilas.getEsquema());
+                        System.out.println("Client recieved a server response: NombreEsquema");
+                        DatoNombre reciveNombre = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoNombre.class);
+                        nombre.getNombre();
                         break;
                     }
-                    if (reference.getReference().equals("DatoColumna")){
-                        System.out.println("Client recieved a server response: DotConnectionPack");
-                        //DatoNombre reciveNombre = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoNombre.class);
+                    
+                    if (reference.getReference().equals("NombreColumna")){
+                        System.out.println("Client recieved a server response: NombreColumna");
+                        DatoColumna reciveColumna = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);
                         columna.getEsquema();
                         break;
                     }
-                    /*
-                    if (reference.getReference().equals("DataPack")){
-                        System.out.println("Client recieved a server response: DataPack");
-                        DataPack data = JSONUtil.convertJsonToJava(recievedObjectAsString, DataPack.class);
-                        
-                        if(data.getWinner() == null){
-                            turnNumber++;
-                            info.setP1Score(data.getScore1());
-                            info.setP2Score(data.getScore2());
-                        }else{
-                            finalPack = data;
-                        }
+                    if (reference.getReference().equals("DatoFila")){
+                        System.out.println("Client recieved a server response: DatoFila");
+                        DatoFila reciveFila = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoFila.class);
+                        fila.getFila();
                         break;
-                    }*/
+                    }
+                    
                 }
             }
         } catch (IOException ex) {

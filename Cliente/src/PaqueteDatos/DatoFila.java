@@ -1,31 +1,40 @@
 package PaqueteDatos;
 
+import static cliente.Cliente.clientSend;
 import java.util.List;
+//abajo
+import PaqueteDatos.TableInformation;
+import java.util.ArrayList;
 
 /**
  *
  * @author kejor
  */
 public class DatoFila {
-     Fila fila;
-     public DatoFila(Fila datos){
-        fila=datos;
-        
-        
-        for (List Filax : datos.Fila) {
+    public static TableInformation tb;
+    
+     ArrayList<List> fila ;
+    public DatoFila(Fila datos){
+        //abajo
+        tb = TableInformation.getInstanceSingletonTableInformation();
+        //fila=tb.getFilas();
+        clientSend(tb.getFilas(), "DatoFila");
+        //System.out.println(datos.name);
+        System.out.println(tb.getFilas() + " Estas son las filas");
+      //  for (List Filax : datos.Fila) {
             //System.out.println("Nombre de la Fila:"+Filax);
-        }
+        //}
       //  DatoEsquema enviarfila = new DatoEsquema();
         //enviarfila.ObtenerFila(datos);
          //System.out.println("Filas: "+datos.Fila);
      }
     
 
-    public Fila getEsquema() {
+    public ArrayList<List> getFila() {
         return fila;
     }
 
-    public void setEsquema(List Fila) {
+    public void setFila(List Fila) {
         this.fila = fila;
     }
        
