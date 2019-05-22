@@ -147,6 +147,9 @@ public class ArbolSplay {
         }
 
     }
+    
+        public void limpiar(){
+    }
 
 
 }
