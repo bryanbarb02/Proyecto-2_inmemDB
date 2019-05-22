@@ -33,7 +33,7 @@ public class TipoArbol {
             TipoArbol = "Splay";
         }
         System.out.println(TipoArbol);
-        clientSend(TipoArbol, "DatoFila");
+        clientSend(TipoArbol, "NombreArbol");
         System.out.println(TipoArbol + "Se envian estos datos Arbol");
     }
 

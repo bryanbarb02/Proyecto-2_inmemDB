@@ -20,6 +20,7 @@ import PaqueteDatos.RegistroCliente;
 import PaqueteDatos.SingletonIP;
 
 
+
 /**
  *
  * @author 
@@ -33,6 +34,7 @@ public class Cliente  implements Runnable{
     public static GetIP menu; 
     public static DatoNombre nombre;
     public static SingletonIP SIP;
+    public static TipoArbol TA;
     
 
     /**
@@ -103,14 +105,6 @@ public class Cliente  implements Runnable{
                 while (recievedObjectAsString != null && recievedClassReferenceAsString != null){
                     ClassReference reference = JSONUtil.convertJsonToJava(recievedClassReferenceAsString, ClassReference.class);
 
-                    /*if (reference.getReference().equals("RegisterPack")){
-                        System.out.println("Client recieved a server response: RegisterPack");
-                        RegistroCliente register = JSONUtil.convertJsonToJava(recievedObjectAsString, RegistroCliente.class);
-                        this.IP = register.getClienteIp();
-                        break;
-                    }*/
-                    
-                    
                     if (reference.getReference().equals("NombreEsquema")){
                         System.out.println("Client recieved a server response: NombreEsquema");
                         DatoNombre reciveNombre = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoNombre.class);
@@ -124,10 +118,18 @@ public class Cliente  implements Runnable{
                         columna.getEsquema();
                         break;
                     }
-                    if (reference.getReference().equals("DatoFila")){
-                        System.out.println("Client recieved a server response: DatoFila");
+                    if (reference.getReference().equals("NombreListas")){
+                        System.out.println("Client recieved a server response: NombreListas");
                         DatoFila reciveFila = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoFila.class);
                         fila.getFila();
+                        break;
+                    }
+                    
+                    if (reference.getReference().equals("NombreArbol")){
+                        System.out.println("Client recieved a server response: NombreArbol");
+                        TipoArbol reciveArbol = JSONUtil.convertJsonToJava(recievedObjectAsString, TipoArbol.class);
+                       // System.out.println(TA + "Tipo de arbol");
+                        TA.getTipoArbol();
                         break;
                     }
                     
