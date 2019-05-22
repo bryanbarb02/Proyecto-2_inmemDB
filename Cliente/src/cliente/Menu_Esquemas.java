@@ -42,7 +42,6 @@ public class Menu_Esquemas extends javax.swing.JFrame {
 
         Crear.setBackground(new java.awt.Color(255, 255, 255));
         Crear.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        Crear.setForeground(new java.awt.Color(0, 0, 0));
         Crear.setText("Crear");
         Crear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +51,6 @@ public class Menu_Esquemas extends javax.swing.JFrame {
 
         Insertar.setBackground(new java.awt.Color(255, 255, 255));
         Insertar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        Insertar.setForeground(new java.awt.Color(0, 0, 0));
         Insertar.setText("Insertar");
         Insertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +60,6 @@ public class Menu_Esquemas extends javax.swing.JFrame {
 
         Borrar.setBackground(new java.awt.Color(255, 255, 255));
         Borrar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        Borrar.setForeground(new java.awt.Color(0, 0, 0));
         Borrar.setText("Borrar");
         Borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,12 +69,15 @@ public class Menu_Esquemas extends javax.swing.JFrame {
 
         Buscar.setBackground(new java.awt.Color(255, 255, 255));
         Buscar.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        Buscar.setForeground(new java.awt.Color(0, 0, 0));
         Buscar.setText("Buscar");
+        Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarActionPerformed(evt);
+            }
+        });
 
         Salir.setBackground(new java.awt.Color(255, 255, 255));
         Salir.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        Salir.setForeground(new java.awt.Color(0, 0, 0));
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,6 +128,7 @@ public class Menu_Esquemas extends javax.swing.JFrame {
 
     private void BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarActionPerformed
         // TODO add your handling code here:
+        new Borrar_1().setVisible(true);
     }//GEN-LAST:event_BorrarActionPerformed
 
     private void InsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarActionPerformed
@@ -142,6 +143,11 @@ public class Menu_Esquemas extends javax.swing.JFrame {
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         new NewCreacion().setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed
+
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_BuscarActionPerformed
 
     /**
      * @param args the command line arguments
