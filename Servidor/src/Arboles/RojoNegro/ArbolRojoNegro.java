@@ -345,6 +345,10 @@ public class ArbolRojoNegro<K extends Comparable<K>>{
         x.setPadre(y);
     }
     
+    public boolean eliminarTodo() {      
+        return false;
+    }
+    
     private void verificarNull(NodoRojoNegro<K> newNodo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
