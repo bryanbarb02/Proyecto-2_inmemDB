@@ -4,18 +4,30 @@
  * and open the template in the editor.
  */
 package cliente;
-
+import PaqueteDatos.TableInformation;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author kejor
  */
 public class Buscar extends javax.swing.JFrame {
-
+    String Nombre;
+    ArrayList<List> Filas;
+    ArrayList<String> ShowFila;
+    TableInformation tb;
+    //ArrayList<String> NombreColumnas
     /**
      * Creates new form Buscar
      */
     public Buscar() {
+        Filas = new ArrayList<>();
+        ShowFila = new ArrayList<>();
         initComponents();
+        tb = TableInformation.getInstanceSingletonTableInformation();
+        Nombre = tb.getNombre();
+        jTextArea1.setText(Nombre);
+        Filas = tb.getFilas();
     }
 
     /**
@@ -33,6 +45,8 @@ public class Buscar extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,6 +64,10 @@ public class Buscar extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jTextPane1);
 
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane3.setViewportView(jTextArea2);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -61,17 +79,21 @@ public class Buscar extends javax.swing.JFrame {
                         .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(95, 95, 95)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -86,6 +108,26 @@ public class Buscar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String indi = jTextPane1.getText();
+        int k = 0;
+        for(int i = 0; i < Filas.size();i++){
+        if (indi.equals(Filas.get(i).get(k))){
+                System.out.println("llega");
+                ShowFila = (ArrayList<String>) Filas.get(i);
+                
+                
+        
+        String Co = "";
+        for (int ind =0 ; ind<ShowFila.size();ind++) {
+            Co += tb.getNombredecolumnas().get(ind)+" : "+ShowFila.get(ind)+"\n";
+            
+        }
+        jTextArea2.setText(Co);
+            }
+            else{
+                jTextArea2.setText("No hay mas datos");
+        }
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -128,7 +170,9 @@ public class Buscar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

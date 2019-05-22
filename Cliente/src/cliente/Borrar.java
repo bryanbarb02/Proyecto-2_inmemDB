@@ -117,17 +117,16 @@ public class Borrar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        String ind =jTextPane1.getText();
+        String ind = jTextPane1.getText();
         System.out.println("jaj "+ ind);
         System.out.println("ueue "+Filas.get(0).get(0));
         System.out.println("pre "+Filas);
         int k=0;
         for (int i = 0; i < Filas.size();i++){
             System.out.println("bandera :"+Filas.get(i).get(k));
-            String is = (String) Filas.get(i).get(k);
-            System.out.println(is);
-            System.out.println(ind+"");
-            if (is==ind+""){
+            System.out.println(ind);
+            System.out.println(Filas.get(i).get(k));
+            if (ind.equals(Filas.get(i).get(k))){
                 System.out.println("llega");
                 Filas.remove(i);    
             }

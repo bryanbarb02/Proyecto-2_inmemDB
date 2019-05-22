@@ -146,7 +146,7 @@ public class Menu_Esquemas extends javax.swing.JFrame {
 
     private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
         // TODO add your handling code here:
-        
+        new Buscar().setVisible(true);
     }//GEN-LAST:event_BuscarActionPerformed
 
     /**
