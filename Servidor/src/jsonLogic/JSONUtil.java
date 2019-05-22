@@ -56,10 +56,10 @@ public class JSONUtil {
             System.out.println("Exception Occured while converting JSON into Java Object "+e.getMessage());
         } 
         catch (JsonMappingException e) {
-            System.out.println("Exception Occured while converting JSON into Java Object "+e.getMessage());
+            //System.out.println("Exception Occured while converting JSON into Java Object "+e.getMessage());
 	} 
         catch (IOException e) {
-            System.out.println("Exception Occured while converting JSON into Java Object "+e.getMessage());
+            //System.out.println("Exception Occured while converting JSON into Java Object "+e.getMessage());
 	}
         return result;
     }
