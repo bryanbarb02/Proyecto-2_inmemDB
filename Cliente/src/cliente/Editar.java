@@ -201,10 +201,11 @@ public class Editar extends javax.swing.JFrame {
 
     private void TeiminarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeiminarButtonActionPerformed
         // TODO add your handling code here:
-        System.out.println("Ultima mierda: "+Filas);
+        
         Tabla test= new Tabla(tb.getNombre(),tb.getNombredecolumnas(),tb.getFilas());
         clientSend(tb.getFilas(), "DatoFila");
         System.out.println(tb.getFilas() + "Se envian estos datos fila");
+        clientSend(tb.getFilas(), "NombreListas");
         new Menu_Esquemas().setVisible(true);
         dispose();
     }//GEN-LAST:event_TeiminarButtonActionPerformed
