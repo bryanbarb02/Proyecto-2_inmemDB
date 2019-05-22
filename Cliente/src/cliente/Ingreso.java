@@ -1,19 +1,21 @@
 
 package cliente;
 import PaqueteDatos.GetIP;
+import PaqueteDatos.SingletonIP;
 /**
  *
  * @author Kevin Rodríguez
  * Este es un jFrame que que pide el IP y luego avanza.
  */
 public class Ingreso extends javax.swing.JFrame {
-
+    SingletonIP si;
     /**
      * Creates new form Ingreso
      */
     public Ingreso() {
         initComponents();
         this.setLocationRelativeTo(null);//para centrar la pantalla
+        si = SingletonIP.getInstanceSingletonIP();
     }
 
     /**
@@ -121,7 +123,7 @@ public class Ingreso extends javax.swing.JFrame {
         String Ip=null;
         Ip=(IpText.getText());
         System.out.println(Ip);
-        enviarIP(Ip);
+        si.setIP(Ip);
         dispose();
     }//GEN-LAST:event_SiguenteActionPerformed
 
