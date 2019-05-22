@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package PaqueteDatos;
+import static cliente.Cliente.clientSend;
 import cliente.Tabla;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +23,14 @@ public class DatoColumna {
         for (String columna : datos.tableNames) {
             System.out.println("Nombre de la columna:"+columna);
         }
+                
+        //clientSend(datos.name, "NombreEsquema");
+        clientSend(datos.tableNames, "NombreColumna");
+        //System.out.println(datos.name);
+        System.out.println(datos.tableNames);
         
         //////Diagmos que es un clic
-        ///Tabla test= new Tabla(datos.name, datos.tableNames);
+        //Tabla test= new Tabla(datos.name, datos.tableNames);
         
         ///
         
