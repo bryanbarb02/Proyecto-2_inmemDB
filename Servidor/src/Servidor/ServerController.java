@@ -13,9 +13,11 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import PaqueteDatos.DatoColumna;
+import PaqueteDatos.Esquema;
 import PaqueteDatos.NombreColumna;
 import PaqueteDatos.NombreEsquema;
 import PaqueteDatos.RegistroCliente;
+import PaqueteDatos.crearEsquema;
 import java.util.List;
 
 /**
@@ -27,6 +29,7 @@ public class ServerController implements Runnable{
     final ObjectMapper mapearObjetos = new ObjectMapper();
     private ClienteIP cliente;
     private DatoColumna Columna;
+    public Esquema ESQUEMA;
     
     /**
      * Método principal para serverController. Inicializa todos los atributos y comienza el hilo.
@@ -117,22 +120,32 @@ public class ServerController implements Runnable{
                     
                     // Entrada al servidor del nombre del esquema
                     if (referencia.getReferencia().equals("NombreEsquema")){
-                        NombreEsquema nombreEsq = JSONUtil.convertJsonToJava(objetoRecibidoComoString, NombreEsquema.class); 
-
+                        NombreEsquema nombreEsq = JSONUtil.convertJsonToJava(objetoRecibidoComoString, NombreEsquema.class);
+                                                
+                        //nombreEsq.setNOMBRE_ESQUEMA(objetoRecibidoComoString);
                         System.out.println("Llegó el dato: NOMBRE_ESQUEMA ");
                         NombreEsquema nombreEsquema= new NombreEsquema(objetoRecibidoComoString); //Guarda el nombre del esquema en la clase NombreEsquema
+                        nombreEsquema.setNOMBRE_ESQUEMA(objetoRecibidoComoString);
                         System.out.println(nombreEsquema.getNOMBRE_ESQUEMA() + "\n");
                         break;                 
                     }
-                    // Entrada al servidor del nombre del nombre de la columna 
+
+                    
+                    // Entrada al servidor del nombre de la columna 
                     if (referencia.getReferencia().equals("NombreColumna")){
                         NombreColumna nombreColum = JSONUtil.convertJsonToJava(objetoRecibidoComoString, NombreColumna.class); 
 
                         System.out.println("Llego le dato: NOMBRE_COLUMNA ");
                         NombreColumna nombreColumna= new NombreColumna(objetoRecibidoComoString);//Guarda el nombre del esquema en la clase NombreColumna
+                        nombreColumna.setDatosCliente(objetoRecibidoComoString);
                         System.out.println(nombreColumna.getNOMBRE_COLUMNA() + "\n");
                         break;
                     }
+//                    crearEsquema es = new crearEsquema();
+//                    System.out.println(es.getNombreEsquema());
+//                    System.out.println(es.getNombreColumna());
+                    
+                    
                 }  
             }
         } catch (Exception ex) {
@@ -140,3 +153,4 @@ public class ServerController implements Runnable{
         }
     }
 }
+
