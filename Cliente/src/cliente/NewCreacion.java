@@ -8,6 +8,7 @@ package cliente;
 import PaqueteDatos.DatoColumna;
 import PaqueteDatos.Encabezados;
 import PaqueteDatos.DatoNombre;
+import PaqueteDatos.TableInformation;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 public class NewCreacion extends javax.swing.JFrame {
     
     ArrayList<String> tableNames;
-
+    TableInformation tb;
     /**
      * Creates new form NewCreacion
      */
@@ -25,6 +26,7 @@ public class NewCreacion extends javax.swing.JFrame {
         tableNames= new ArrayList<>();
         initComponents();
         this.setLocationRelativeTo(null);//para centrar la pantalla
+        tb = TableInformation.getInstanceSingletonTableInformation();
     }
 
     /**
@@ -134,10 +136,12 @@ public class NewCreacion extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Encabezados datos= new Encabezados(jTextFieldName.getText(), tableNames);
-        
+        tb.setNombre(jTextFieldName.getText());
+        tb.setNombredecolumnas(tableNames);
         DatoColumna datoColumna= new DatoColumna(datos);
         DatoNombre DatoNombre= new DatoNombre(datos);
         jTextFieldName.setText("");
+        new Editar1().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

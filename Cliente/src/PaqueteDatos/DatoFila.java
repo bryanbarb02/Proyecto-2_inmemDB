@@ -13,11 +13,11 @@ public class DatoFila {
         
         
         for (List Filax : datos.Fila) {
-            System.out.println("Nombre de la Fila:"+Filax);
+            //System.out.println("Nombre de la Fila:"+Filax);
         }
       //  DatoEsquema enviarfila = new DatoEsquema();
         //enviarfila.ObtenerFila(datos);
-         
+         //System.out.println("Filas: "+datos.Fila);
      }
     
 

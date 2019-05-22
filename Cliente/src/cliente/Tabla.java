@@ -18,7 +18,7 @@ public class Tabla {
     JTable j; 
   
     // Constructor 
-    public Tabla(String name, ArrayList<String> columnas) 
+    public Tabla(String name, ArrayList<String> columnas, ArrayList<List> Filas) 
     { 
         
         // Frame initiallization 
@@ -28,6 +28,10 @@ public class Tabla {
         String Name=name;
         String[] NombreColumnas = new String[columnas.size()];
 //        String[] NombreColumnas = { "Jugador", "Salario", "Numero","Estatus" };
+        int r = Filas.size();
+        int t = Filas.get(0).size();
+        String [][] Datos;
+        Datos = new String[r][t];
         int i=0;
         for (String columna : columnas) {
             NombreColumnas[i]=columna;
@@ -35,14 +39,23 @@ public class Tabla {
             i++;
             
         }
+        for (int j=0;j<Filas.size();j++) {
+        System.out.println("llego bien a tabla");
+            for (int k=0; k<Filas.get(j).size();k++){
+                System.out.println(Filas.get(j).get(k));
+                Datos[j][k]=(String) Filas.get(j).get(k);
+            }
+         
+        }
         
-        String [] [] Datos= { 
+    
+        /**String [] [] Datos= { 
             { "Messe", "TU", "10","activo" }, 
             { "Suares", "PINCHE", "9","Activo" },
             { "Umtiti", "MADRE", "23","Activo"},
             {"Dembele", "WEY", "11","Lesionado"},
              
-        }; 
+        }; **/
         f.setTitle(""+Name); 
   
         // Data to be displayed in the JTable 
@@ -69,9 +82,9 @@ public class Tabla {
 //        new Tabla(); 
     } 
 
-    public Tabla(String name, ArrayList<String> tableNames, ArrayList<List> Fila) {
+   /** public Tabla(String name, ArrayList<String> tableNames,ArrayList<List> Filas) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-} 
+}**/
+}
 
 

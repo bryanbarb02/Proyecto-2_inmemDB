@@ -103,14 +103,14 @@ public class Cliente  implements Runnable{
                     }
                     
                     
-                    if (reference.getReference().equals("NombreEsquema")){
+                    if (reference.getReference().equals("DatoColumna")){
                         System.out.println("Client recieved a server response: DotConnectionPack");
                         DatoColumna reciveColumnas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoColumna.class);
                         columna.getEsquema();
                         break;
                     }
                     
-                    if (reference.getReference().equals("NombreColumna")){
+                    if (reference.getReference().equals("DatoFila")){
                         System.out.println("Client recieved a server response: DotConnectionPack");
                         DatoFila reciveFilas = JSONUtil.convertJsonToJava(recievedObjectAsString, DatoFila.class);
                         //fila.ObtenerLista(reciveFilas.getEsquema());

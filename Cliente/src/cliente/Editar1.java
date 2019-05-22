@@ -6,6 +6,8 @@
 package cliente;
 import PaqueteDatos.DatoFila;
 import PaqueteDatos.Fila;
+import PaqueteDatos.TableInformation;
+
 /**
  *
  * @author Kevin Rodríguez
@@ -16,6 +18,8 @@ import java.util.List;
 public class Editar1 extends javax.swing.JFrame {
     ArrayList<List> Filas;
     ArrayList<String> FilasTemp;
+    TableInformation tb;
+    int i = 1;
     /**
      * Creates new form Editar1
      */
@@ -24,7 +28,11 @@ public class Editar1 extends javax.swing.JFrame {
         FilasTemp = new ArrayList<>();
         initComponents();
         this.setLocationRelativeTo(null);//para centrar la pantalla
-        
+        tb = TableInformation.getInstanceSingletonTableInformation();
+        //jTextArea1.setText(tb.getNombredecolumnas());
+        for (String columna : tb.getNombredecolumnas()) {
+            jTextArea1.setText(columna + " ");
+        }
         
     }
 
@@ -37,13 +45,14 @@ public class Editar1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanelEditar = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         Add = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         EditText = new javax.swing.JTextPane();
         Crear = new javax.swing.JButton();
+        CrearEsquemaButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,42 +76,53 @@ public class Editar1 extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        CrearEsquemaButton.setText("Crear Esquema");
+        CrearEsquemaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearEsquemaButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelEditarLayout = new javax.swing.GroupLayout(jPanelEditar);
+        jPanelEditar.setLayout(jPanelEditarLayout);
+        jPanelEditarLayout.setHorizontalGroup(
+            jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEditarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEditarLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelEditarLayout.createSequentialGroup()
+                        .addGroup(jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelEditarLayout.createSequentialGroup()
                                 .addGap(227, 227, 227)
-                                .addComponent(Add)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(Crear, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(Add))
+                            .addGroup(jPanelEditarLayout.createSequentialGroup()
+                                .addGap(215, 215, 215)
+                                .addComponent(Crear, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelEditarLayout.createSequentialGroup()
+                                .addGap(195, 195, 195)
+                                .addComponent(CrearEsquemaButton)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelEditarLayout.setVerticalGroup(
+            jPanelEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEditarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanelEditarLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Add)
-                .addGap(45, 45, 45)
+                .addGap(44, 44, 44)
                 .addComponent(Crear)
+                .addGap(46, 46, 46)
+                .addComponent(CrearEsquemaButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -110,31 +130,45 @@ public class Editar1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
-        System.out.println("Ingresado:"+EditText.getText());
+                
+        //System.out.println("Ingresado:"+EditText.getText());
         FilasTemp.add(EditText.getText());
         EditText.setText("");
+        
     }//GEN-LAST:event_AddActionPerformed
 
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
+        
+        FilasTemp.add(0,""+i);
+        System.out.println(FilasTemp);
         Filas.add(FilasTemp);
-        Fila datos= new Fila(Filas);
+        tb.setFilas(Filas);
+        System.out.println("tb: "+tb.getFilas());
+        //Fila datos= new Fila(Filas);
         System.out.println("Ingresado:"+Filas);
-        DatoFila datoFila= new DatoFila(datos);
+        //DatoFila datoFila= new DatoFila(datos);
         EditText.setText("");
-        new AddMenu().setVisible(true);
-        dispose();
+        FilasTemp = new ArrayList<>();
+        //new AddMenu().setVisible(true);
+        i++;
     }//GEN-LAST:event_CrearActionPerformed
+
+    private void CrearEsquemaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearEsquemaButtonActionPerformed
+        // TODO add your handling code here:
+        tb.getNombredecolumnas().add(0,"Ídice");
+        Tabla test= new Tabla(tb.getNombre(),tb.getNombredecolumnas(),tb.getFilas());
+    }//GEN-LAST:event_CrearEsquemaButtonActionPerformed
     
     
     /**
@@ -175,8 +209,9 @@ public class Editar1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Add;
     private javax.swing.JButton Crear;
+    private javax.swing.JButton CrearEsquemaButton;
     private javax.swing.JTextPane EditText;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelEditar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;

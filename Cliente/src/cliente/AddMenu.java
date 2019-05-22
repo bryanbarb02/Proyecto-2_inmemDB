@@ -5,6 +5,9 @@
  */
 package cliente;
 
+import PaqueteDatos.TableInformation;
+import java.util.ArrayList;
+
 /**
  *
  * @author kejor
@@ -92,7 +95,9 @@ public class AddMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_CrearEsquemaActionPerformed
 
     private void EditarColumnasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarColumnasActionPerformed
-        new Editar1().setVisible(true);
+        TableInformation tb = TableInformation.getInstanceSingletonTableInformation();
+        System.out.println("Impresion tb: "+tb.getFilas());
+        //new Editar1().setVisible(true);
         dispose();
     }//GEN-LAST:event_EditarColumnasActionPerformed
 
