@@ -6,14 +6,14 @@ public class Main {
 
         ArbolSplay splayTree = new ArbolSplay();
         //Insert values
-        splayTree.insertar(new Entrada(1, "Jack"));
-        splayTree.insertar(new Entrada(6, "Tom"));
-        splayTree.insertar(new Entrada(4, "Raj"));
-        splayTree.insertar(new Entrada(7, "Kareena"));
-        splayTree.insertar(new Entrada(8, "John"));
-        splayTree.insertar(new Entrada(10, "Susan"));
-        splayTree.insertar(new Entrada(5, "Linda"));
-        splayTree.insertar(new Entrada(9, "Peter"));
+        splayTree.insertar(new Entrada("Jack"));
+        splayTree.insertar(new Entrada("Tom"));
+        splayTree.insertar(new Entrada("Raj"));
+        splayTree.insertar(new Entrada( "Kareena"));
+        splayTree.insertar(new Entrada("John"));
+        splayTree.insertar(new Entrada("Susan"));
+        splayTree.insertar(new Entrada("Linda"));
+        splayTree.insertar(new Entrada("Peter"));
 
         //Find
         System.out.println(splayTree.encontrar(6));
