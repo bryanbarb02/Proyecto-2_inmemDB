@@ -10,7 +10,7 @@ public class Entrada implements Comparable<Entrada> {
         return "Entrada{" + "key=" + key +", valor='" + valor + '\'' +'}';
     }
 
-    public Entrada(int key, String valor) {
+    public Entrada(String valor) {
         this.key = key;
         this.valor = valor;
     }
