@@ -132,6 +132,7 @@ public class Menu_Esquemas extends javax.swing.JFrame {
 
     private void InsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarActionPerformed
         // TODO add your handling code here:
+        new Buscar_Editar().setVisible(true);
     }//GEN-LAST:event_InsertarActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed

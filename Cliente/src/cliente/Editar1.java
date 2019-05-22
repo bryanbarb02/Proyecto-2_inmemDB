@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
 public class Editar1 extends javax.swing.JFrame {
-    ArrayList<List> Filas;
+    ArrayList<List> Filas ;
     ArrayList<String> FilasTemp;
     TableInformation tb;
     int i = 1;
@@ -181,8 +181,8 @@ public class Editar1 extends javax.swing.JFrame {
         Tabla test= new Tabla(tb.getNombre(),tb.getNombredecolumnas(),tb.getFilas());
         clientSend(tb.getFilas(), "DatoFila");
         System.out.println(tb.getFilas() + "Se envian estos datos fila");
-        new Menu_Esquemas().setVisible(true);
-        dispose();
+        //new Menu_Esquemas().setVisible(true);
+        //dispose();
     }//GEN-LAST:event_CrearEsquemaButtonActionPerformed
     
     
