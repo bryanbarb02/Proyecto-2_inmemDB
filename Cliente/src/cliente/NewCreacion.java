@@ -142,6 +142,7 @@ public class NewCreacion extends javax.swing.JFrame {
         DatoNombre DatoNombre= new DatoNombre(datos);
         jTextFieldName.setText("");
         new Editar1().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
