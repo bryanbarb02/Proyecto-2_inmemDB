@@ -5,14 +5,17 @@
  */
 package PaqueteDatos;
 
+import static cliente.Cliente.clientSend;
+
 /**
  *
  * @author kejor
  */
 public class DatoNombre {
     String Nombre;
-    public DatoNombre (Encabezados Datos){
-        Nombre= Datos.name;
+    public DatoNombre (Encabezados datos){
+        clientSend(datos.name, "NombreEsquema");
+        System.out.println(datos.name);
     }
 
     public String getNombre() {
@@ -24,3 +27,4 @@ public class DatoNombre {
     }
     
 }
+
